@@ -52,11 +52,14 @@ export const SEO_TITLE = "WPS Payroll & Salary Card UAE | Edenred Payroll for Bu
 export const SEO_DESC =
   "Edenred Payroll is the UAE's largest WPS-compliant payroll solution. Process salaries, issue Mastercard salary cards & manage payroll cards for your employees — trusted by 15,000+ businesses.";
 
-// Instant scroll to form
+// Instant scroll to form (override global smooth scroll)
 export function scrollToDemo(e?: React.MouseEvent) {
   if (e) e.preventDefault();
   const el = document.getElementById("demo");
-  if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - 80;
+  // Force instant by using behavior: "instant"
+  window.scrollTo({ top, behavior: "instant" as ScrollBehavior });
 }
 
 export function Nav() {
