@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Nav,
-  HeroClassic,
+  HeroWithForm,
   ClientLogos,
   Stats,
   Features,
@@ -10,22 +10,21 @@ import {
   WPS,
   EmployeeValue,
   FAQ,
-  DemoForm,
   Footer,
   seoMeta,
 } from "@/components/landing/shared";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/v2")({
   head: () => seoMeta(),
-  component: LandingPage,
+  component: LandingPageV2,
 });
 
-function LandingPage() {
+function LandingPageV2() {
   return (
     <div className="min-h-screen bg-background">
       <Nav />
       <main>
-        <HeroClassic />
+        <HeroWithForm />
         <ClientLogos />
         <Stats />
         <Features />
@@ -34,7 +33,6 @@ function LandingPage() {
         <WPS />
         <EmployeeValue />
         <FAQ />
-        <DemoForm />
       </main>
       <Footer />
     </div>
