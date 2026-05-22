@@ -484,24 +484,41 @@ export function EmployeeValue() {
     { title: "24/7 support", desc: "Multilingual support for every employee." },
   ];
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20 lg:py-28 bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-5">
+        {/* Balanced header — full width, centered intent on the left, supporting copy on the right */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+          <div className="lg:col-span-7">
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">For your employees</p>
             <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">A salary card your people actually want</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Happy employees stay longer. The C3Pay salary card, powered by Mastercard, gives your workforce a complete financial app — not just a place to receive wages.
-            </p>
-            <img src={IMG.heroMobile} alt="Employees using the C3Pay salary card mobile app" loading="lazy" className="mt-8 rounded-2xl shadow-elegant w-full max-w-sm" />
           </div>
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+          <p className="lg:col-span-5 text-lg text-muted-foreground">
+            Happy employees stay longer. The C3Pay salary card, powered by Mastercard, gives your workforce a complete financial app — not just a place to receive wages.
+          </p>
+        </div>
+
+        {/* Bento grid — phone tile on the left matches the height of the 3x2 benefits grid */}
+        <div className="mt-12 grid lg:grid-cols-12 gap-5">
+          <div className="lg:col-span-4 relative overflow-hidden rounded-2xl bg-gradient-primary p-8 shadow-elegant flex flex-col justify-between min-h-[420px]">
+            <div className="text-primary-foreground">
+              <p className="text-sm font-semibold uppercase tracking-widest opacity-80">C3Pay app</p>
+              <h3 className="mt-2 text-2xl font-bold leading-tight">One app for salary, spending & sending money home</h3>
+            </div>
+            <img
+              src={IMG.heroMobile}
+              alt="Employees using the C3Pay salary card mobile app"
+              loading="lazy"
+              className="mt-6 w-full max-w-[260px] mx-auto drop-shadow-2xl"
+            />
+          </div>
+
+          <div className="lg:col-span-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {benefits.map((b) => (
-              <div key={b.title} className="rounded-xl border border-border bg-card p-5 shadow-card">
-                <div className="flex items-center gap-3">
+              <div key={b.title} className="rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant transition-shadow">
+                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <CreditCard className="h-5 w-5 text-primary" />
-                  <h3 className="font-semibold text-navy">{b.title}</h3>
                 </div>
+                <h3 className="mt-4 font-semibold text-navy">{b.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{b.desc}</p>
               </div>
             ))}
