@@ -341,8 +341,21 @@ export function Platform() {
           {rows.map((r, i) => (
             <div key={r.title} className={`grid lg:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""}`}>
               <div className="relative">
-                <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl" aria-hidden />
-                <img src={r.img} alt={r.title} loading="lazy" className="relative w-full h-auto rounded-2xl shadow-elegant bg-background" />
+                <div className="absolute -inset-4 bg-gradient-primary opacity-10 rounded-3xl blur-2xl" aria-hidden />
+                {/* Navy browser-style frame so the white dashboard screenshot is clearly visible */}
+                <div className="relative rounded-2xl bg-navy p-3 shadow-elegant ring-1 ring-navy/20">
+                  <div className="flex items-center gap-1.5 px-2 pb-2">
+                    <span className="h-2.5 w-2.5 rounded-full bg-primary/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-primary-foreground/30" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-primary-foreground/30" />
+                  </div>
+                  <img
+                    src={r.img}
+                    alt={r.title}
+                    loading="lazy"
+                    className="w-full h-auto rounded-lg bg-background border border-border"
+                  />
+                </div>
               </div>
               <div>
                 <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary">
