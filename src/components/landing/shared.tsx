@@ -374,14 +374,14 @@ export function Platform() {
 
 export function Cards() {
   const items = [
-    { img: IMG.cards1, title: "Auto-ordered on hire", desc: "Cards automatically ordered when you add a new employee — zero manual paperwork." },
-    { img: IMG.cards2, title: "Replace in clicks", desc: "Lost card? Block it and request a replacement in just a few clicks from the dashboard." },
-    { img: IMG.cards3, title: "Live delivery tracking", desc: "Cards delivered directly to you with full live tracking so nothing falls through the cracks." },
+    { icon: Zap, title: "Auto-ordered on hire", desc: "Cards automatically ordered when you add a new employee — zero manual paperwork." },
+    { icon: CreditCard, title: "Replace in clicks", desc: "Lost card? Block it and request a replacement in just a few clicks from the dashboard." },
+    { icon: ShieldCheck, title: "Live delivery tracking", desc: "Cards delivered directly to you with full live tracking so nothing falls through the cracks." },
   ];
   return (
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">Salary card management</p>
             <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">
@@ -390,6 +390,16 @@ export function Cards() {
             <p className="mt-4 text-lg text-muted-foreground max-w-lg">
               Every employee gets a Mastercard-powered C3Pay salary card — accepted at any ATM, online and in-store worldwide. You stay fully in control of issuance.
             </p>
+            {/* Real C3Pay card composite from edenred.ae */}
+            <div className="mt-8 relative max-w-md">
+              <div className="absolute -inset-4 bg-gradient-primary opacity-10 blur-2xl rounded-3xl" aria-hidden />
+              <img
+                src={IMG.cards1}
+                alt="Edenred C3Pay Mastercard payroll card"
+                loading="lazy"
+                className="relative w-full h-auto"
+              />
+            </div>
             <a
               href="#demo"
               onClick={scrollToDemo}
@@ -400,11 +410,13 @@ export function Cards() {
           </div>
           <div className="grid gap-5">
             {items.map((it) => (
-              <div key={it.title} className="flex items-center gap-5 rounded-2xl border border-border bg-card p-5 shadow-card">
-                <img src={it.img} alt={it.title} loading="lazy" className="h-16 w-16 object-contain shrink-0" />
+              <div key={it.title} className="flex items-start gap-5 rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant transition-shadow">
+                <div className="h-14 w-14 shrink-0 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center">
+                  <it.icon className="h-7 w-7" />
+                </div>
                 <div>
-                  <h3 className="font-semibold text-navy">{it.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{it.desc}</p>
+                  <h3 className="font-semibold text-navy text-lg">{it.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{it.desc}</p>
                 </div>
               </div>
             ))}
