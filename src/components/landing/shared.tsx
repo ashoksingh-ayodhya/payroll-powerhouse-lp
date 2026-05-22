@@ -17,35 +17,42 @@ import {
   BadgeCheck,
 } from "lucide-react";
 
-// Assets hosted on edenred.ae (per user requirement: only use site images)
+// Assets hosted on edenred.ae (per user requirement: only use site images).
+// Proxied via images.weserv.nl because edenred.ae blocks hot-linking from
+// non-edenred origins ("Failed to fetch" in the browser even though curl 200s).
+const proxy = (path: string, ext: "auto" | "png" = "auto") => {
+  const base = `https://images.weserv.nl/?url=edenred.ae/${path}`;
+  return ext === "png" ? `${base}&output=png` : base;
+};
+
 export const IMG = {
-  logo: "https://edenred.ae/wp-content/uploads/2021/02/Logo_Edenred_Digital-use.svg",
-  partnersStrip: "https://edenred.ae/wp-content/uploads/2024/05/Group-21.png",
-  rakbank: "https://edenred.ae/wp-content/uploads/2021/01/Logo_RAKBANK-1.svg",
-  mastercardJaywan: "https://edenred.ae/wp-content/uploads/2025/11/Logo_Mastercard_Jaywan.svg",
-  mohre: "https://edenred.ae/wp-content/uploads/2021/01/Logo_MoL-1.jpg",
-  gptw: "https://edenred.ae/wp-content/uploads/2022/06/1.png",
-  heroComposite: "https://edenred.ae/wp-content/uploads/2024/05/LandingPage_May2024-1024x896.png",
-  heroMobile: "https://edenred.ae/wp-content/uploads/2024/05/LandingPage_May2024-1-585x1024.png",
-  dash1: "https://edenred.ae/wp-content/uploads/2021/12/1_AnticipatesNeeds_1.jpg",
-  dash2: "https://edenred.ae/wp-content/uploads/2021/12/1_AnticipatesNeeds_2.jpg",
-  dash3: "https://edenred.ae/wp-content/uploads/2022/02/1_AnticipatesNeeds_3.jpg",
-  dash4: "https://edenred.ae/wp-content/uploads/2021/12/1_AnticipatesNeeds_4.jpg",
-  better1: "https://edenred.ae/wp-content/uploads/2021/12/2_BetterWay_1.jpg",
-  better2: "https://edenred.ae/wp-content/uploads/2021/12/2_BetterWay_2.jpg",
-  better3: "https://edenred.ae/wp-content/uploads/2021/12/2_BetterWay_3.jpg",
-  better4: "https://edenred.ae/wp-content/uploads/2022/02/2_BetterWay_4.jpg",
-  cards1: "https://edenred.ae/wp-content/uploads/2021/03/Section3_1.png",
-  cards2: "https://edenred.ae/wp-content/uploads/2021/03/Section3_2.png",
-  cards3: "https://edenred.ae/wp-content/uploads/2021/03/Section3_3.png",
-  payrollAnim: "https://edenred.ae/wp-content/uploads/2021/12/3_EP_Main.gif",
-  damac: "https://edenred.ae/wp-content/uploads/2024/05/Damac-logo-1024x137.png",
-  talabat: "https://edenred.ae/wp-content/uploads/2024/05/Talabat_logo.svg",
-  landmark: "https://edenred.ae/wp-content/uploads/2024/05/landmark-group-logo.png",
-  ihg: "https://edenred.ae/wp-content/uploads/2024/05/IHG.svg",
-  waitrose: "https://edenred.ae/wp-content/uploads/2024/05/Waitrose_Logo.svg",
-  daytoday: "https://edenred.ae/wp-content/uploads/2024/05/daytoday.png",
-  client7: "https://edenred.ae/wp-content/uploads/2024/05/pngegg-e1716462279486.png",
+  logo: proxy("wp-content/uploads/2021/02/Logo_Edenred_Digital-use.svg", "png"),
+  partnersStrip: proxy("wp-content/uploads/2024/05/Group-21.png"),
+  rakbank: proxy("wp-content/uploads/2021/01/Logo_RAKBANK-1.svg", "png"),
+  mastercardJaywan: proxy("wp-content/uploads/2025/11/Logo_Mastercard_Jaywan.svg", "png"),
+  mohre: proxy("wp-content/uploads/2021/01/Logo_MoL-1.jpg"),
+  gptw: proxy("wp-content/uploads/2022/06/1.png"),
+  heroComposite: proxy("wp-content/uploads/2024/05/LandingPage_May2024-1024x896.png"),
+  heroMobile: proxy("wp-content/uploads/2024/05/LandingPage_May2024-1-585x1024.png"),
+  dash1: proxy("wp-content/uploads/2021/12/1_AnticipatesNeeds_1.jpg"),
+  dash2: proxy("wp-content/uploads/2021/12/1_AnticipatesNeeds_2.jpg"),
+  dash3: proxy("wp-content/uploads/2022/02/1_AnticipatesNeeds_3.jpg"),
+  dash4: proxy("wp-content/uploads/2021/12/1_AnticipatesNeeds_4.jpg"),
+  better1: proxy("wp-content/uploads/2021/12/2_BetterWay_1.jpg"),
+  better2: proxy("wp-content/uploads/2021/12/2_BetterWay_2.jpg"),
+  better3: proxy("wp-content/uploads/2021/12/2_BetterWay_3.jpg"),
+  better4: proxy("wp-content/uploads/2022/02/2_BetterWay_4.jpg"),
+  cards1: proxy("wp-content/uploads/2021/03/Section3_1.png"),
+  cards2: proxy("wp-content/uploads/2021/03/Section3_2.png"),
+  cards3: proxy("wp-content/uploads/2021/03/Section3_3.png"),
+  payrollAnim: proxy("wp-content/uploads/2021/12/3_EP_Main.gif"),
+  damac: proxy("wp-content/uploads/2024/05/Damac-logo-1024x137.png"),
+  talabat: proxy("wp-content/uploads/2024/05/Talabat_logo.svg", "png"),
+  landmark: proxy("wp-content/uploads/2024/05/landmark-group-logo.png"),
+  ihg: proxy("wp-content/uploads/2024/05/IHG.svg", "png"),
+  waitrose: proxy("wp-content/uploads/2024/05/Waitrose_Logo.svg", "png"),
+  daytoday: proxy("wp-content/uploads/2024/05/daytoday.png"),
+  client7: proxy("wp-content/uploads/2024/05/pngegg-e1716462279486.png"),
 };
 
 export const SEO_TITLE = "WPS Payroll & Salary Card UAE | Edenred Payroll for Business";
