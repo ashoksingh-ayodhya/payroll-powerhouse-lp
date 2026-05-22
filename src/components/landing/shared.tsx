@@ -17,35 +17,42 @@ import {
   BadgeCheck,
 } from "lucide-react";
 
-// Assets hosted on edenred.ae (per user requirement: only use site images)
+// Assets hosted on edenred.ae (per user requirement: only use site images).
+// Proxied via images.weserv.nl because edenred.ae blocks hot-linking from
+// non-edenred origins ("Failed to fetch" in the browser even though curl 200s).
+const proxy = (path: string, ext: "auto" | "png" = "auto") => {
+  const base = `https://images.weserv.nl/?url=edenred.ae/${path}`;
+  return ext === "png" ? `${base}&output=png` : base;
+};
+
 export const IMG = {
-  logo: "https://edenred.ae/wp-content/uploads/2021/02/Logo_Edenred_Digital-use.svg",
-  partnersStrip: "https://edenred.ae/wp-content/uploads/2024/05/Group-21.png",
-  rakbank: "https://edenred.ae/wp-content/uploads/2021/01/Logo_RAKBANK-1.svg",
-  mastercardJaywan: "https://edenred.ae/wp-content/uploads/2025/11/Logo_Mastercard_Jaywan.svg",
-  mohre: "https://edenred.ae/wp-content/uploads/2021/01/Logo_MoL-1.jpg",
-  gptw: "https://edenred.ae/wp-content/uploads/2022/06/1.png",
-  heroComposite: "https://edenred.ae/wp-content/uploads/2024/05/LandingPage_May2024-1024x896.png",
-  heroMobile: "https://edenred.ae/wp-content/uploads/2024/05/LandingPage_May2024-1-585x1024.png",
-  dash1: "https://edenred.ae/wp-content/uploads/2021/12/1_AnticipatesNeeds_1.jpg",
-  dash2: "https://edenred.ae/wp-content/uploads/2021/12/1_AnticipatesNeeds_2.jpg",
-  dash3: "https://edenred.ae/wp-content/uploads/2022/02/1_AnticipatesNeeds_3.jpg",
-  dash4: "https://edenred.ae/wp-content/uploads/2021/12/1_AnticipatesNeeds_4.jpg",
-  better1: "https://edenred.ae/wp-content/uploads/2021/12/2_BetterWay_1.jpg",
-  better2: "https://edenred.ae/wp-content/uploads/2021/12/2_BetterWay_2.jpg",
-  better3: "https://edenred.ae/wp-content/uploads/2021/12/2_BetterWay_3.jpg",
-  better4: "https://edenred.ae/wp-content/uploads/2022/02/2_BetterWay_4.jpg",
-  cards1: "https://edenred.ae/wp-content/uploads/2021/03/Section3_1.png",
-  cards2: "https://edenred.ae/wp-content/uploads/2021/03/Section3_2.png",
-  cards3: "https://edenred.ae/wp-content/uploads/2021/03/Section3_3.png",
-  payrollAnim: "https://edenred.ae/wp-content/uploads/2021/12/3_EP_Main.gif",
-  damac: "https://edenred.ae/wp-content/uploads/2024/05/Damac-logo-1024x137.png",
-  talabat: "https://edenred.ae/wp-content/uploads/2024/05/Talabat_logo.svg",
-  landmark: "https://edenred.ae/wp-content/uploads/2024/05/landmark-group-logo.png",
-  ihg: "https://edenred.ae/wp-content/uploads/2024/05/IHG.svg",
-  waitrose: "https://edenred.ae/wp-content/uploads/2024/05/Waitrose_Logo.svg",
-  daytoday: "https://edenred.ae/wp-content/uploads/2024/05/daytoday.png",
-  client7: "https://edenred.ae/wp-content/uploads/2024/05/pngegg-e1716462279486.png",
+  logo: proxy("wp-content/uploads/2021/02/Logo_Edenred_Digital-use.svg", "png"),
+  partnersStrip: proxy("wp-content/uploads/2024/05/Group-21.png"),
+  rakbank: proxy("wp-content/uploads/2021/01/Logo_RAKBANK-1.svg", "png"),
+  mastercardJaywan: proxy("wp-content/uploads/2025/11/Logo_Mastercard_Jaywan.svg", "png"),
+  mohre: proxy("wp-content/uploads/2021/01/Logo_MoL-1.jpg"),
+  gptw: proxy("wp-content/uploads/2022/06/1.png"),
+  heroComposite: proxy("wp-content/uploads/2024/05/LandingPage_May2024-1024x896.png"),
+  heroMobile: proxy("wp-content/uploads/2024/05/LandingPage_May2024-1-585x1024.png"),
+  dash1: proxy("wp-content/uploads/2021/12/1_AnticipatesNeeds_1.jpg"),
+  dash2: proxy("wp-content/uploads/2021/12/1_AnticipatesNeeds_2.jpg"),
+  dash3: proxy("wp-content/uploads/2022/02/1_AnticipatesNeeds_3.jpg"),
+  dash4: proxy("wp-content/uploads/2021/12/1_AnticipatesNeeds_4.jpg"),
+  better1: proxy("wp-content/uploads/2021/12/2_BetterWay_1.jpg"),
+  better2: proxy("wp-content/uploads/2021/12/2_BetterWay_2.jpg"),
+  better3: proxy("wp-content/uploads/2021/12/2_BetterWay_3.jpg"),
+  better4: proxy("wp-content/uploads/2022/02/2_BetterWay_4.jpg"),
+  cards1: proxy("wp-content/uploads/2021/03/Section3_1.png"),
+  cards2: proxy("wp-content/uploads/2021/03/Section3_2.png"),
+  cards3: proxy("wp-content/uploads/2021/03/Section3_3.png"),
+  payrollAnim: proxy("wp-content/uploads/2021/12/3_EP_Main.gif"),
+  damac: proxy("wp-content/uploads/2024/05/Damac-logo-1024x137.png"),
+  talabat: proxy("wp-content/uploads/2024/05/Talabat_logo.svg", "png"),
+  landmark: proxy("wp-content/uploads/2024/05/landmark-group-logo.png"),
+  ihg: proxy("wp-content/uploads/2024/05/IHG.svg", "png"),
+  waitrose: proxy("wp-content/uploads/2024/05/Waitrose_Logo.svg", "png"),
+  daytoday: proxy("wp-content/uploads/2024/05/daytoday.png"),
+  client7: proxy("wp-content/uploads/2024/05/pngegg-e1716462279486.png"),
 };
 
 export const SEO_TITLE = "WPS Payroll & Salary Card UAE | Edenred Payroll for Business";
@@ -341,8 +348,21 @@ export function Platform() {
           {rows.map((r, i) => (
             <div key={r.title} className={`grid lg:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""}`}>
               <div className="relative">
-                <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl" aria-hidden />
-                <img src={r.img} alt={r.title} loading="lazy" className="relative w-full h-auto rounded-2xl shadow-elegant bg-background" />
+                <div className="absolute -inset-4 bg-gradient-primary opacity-10 rounded-3xl blur-2xl" aria-hidden />
+                {/* Navy browser-style frame so the white dashboard screenshot is clearly visible */}
+                <div className="relative rounded-2xl bg-navy p-3 shadow-elegant ring-1 ring-navy/20">
+                  <div className="flex items-center gap-1.5 px-2 pb-2">
+                    <span className="h-2.5 w-2.5 rounded-full bg-primary/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-primary-foreground/30" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-primary-foreground/30" />
+                  </div>
+                  <img
+                    src={r.img}
+                    alt={r.title}
+                    loading="lazy"
+                    className="w-full h-auto rounded-lg bg-background border border-border"
+                  />
+                </div>
               </div>
               <div>
                 <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary">
@@ -361,14 +381,14 @@ export function Platform() {
 
 export function Cards() {
   const items = [
-    { img: IMG.cards1, title: "Auto-ordered on hire", desc: "Cards automatically ordered when you add a new employee — zero manual paperwork." },
-    { img: IMG.cards2, title: "Replace in clicks", desc: "Lost card? Block it and request a replacement in just a few clicks from the dashboard." },
-    { img: IMG.cards3, title: "Live delivery tracking", desc: "Cards delivered directly to you with full live tracking so nothing falls through the cracks." },
+    { icon: Zap, title: "Auto-ordered on hire", desc: "Cards automatically ordered when you add a new employee — zero manual paperwork." },
+    { icon: CreditCard, title: "Replace in clicks", desc: "Lost card? Block it and request a replacement in just a few clicks from the dashboard." },
+    { icon: ShieldCheck, title: "Live delivery tracking", desc: "Cards delivered directly to you with full live tracking so nothing falls through the cracks." },
   ];
   return (
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">Salary card management</p>
             <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">
@@ -377,6 +397,16 @@ export function Cards() {
             <p className="mt-4 text-lg text-muted-foreground max-w-lg">
               Every employee gets a Mastercard-powered C3Pay salary card — accepted at any ATM, online and in-store worldwide. You stay fully in control of issuance.
             </p>
+            {/* Real C3Pay card composite from edenred.ae */}
+            <div className="mt-8 relative max-w-md">
+              <div className="absolute -inset-4 bg-gradient-primary opacity-10 blur-2xl rounded-3xl" aria-hidden />
+              <img
+                src={IMG.cards1}
+                alt="Edenred C3Pay Mastercard payroll card"
+                loading="lazy"
+                className="relative w-full h-auto"
+              />
+            </div>
             <a
               href="#demo"
               onClick={scrollToDemo}
@@ -387,11 +417,13 @@ export function Cards() {
           </div>
           <div className="grid gap-5">
             {items.map((it) => (
-              <div key={it.title} className="flex items-center gap-5 rounded-2xl border border-border bg-card p-5 shadow-card">
-                <img src={it.img} alt={it.title} loading="lazy" className="h-16 w-16 object-contain shrink-0" />
+              <div key={it.title} className="flex items-start gap-5 rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant transition-shadow">
+                <div className="h-14 w-14 shrink-0 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center">
+                  <it.icon className="h-7 w-7" />
+                </div>
                 <div>
-                  <h3 className="font-semibold text-navy">{it.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{it.desc}</p>
+                  <h3 className="font-semibold text-navy text-lg">{it.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{it.desc}</p>
                 </div>
               </div>
             ))}
