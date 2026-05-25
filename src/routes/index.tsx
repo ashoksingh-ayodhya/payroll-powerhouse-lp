@@ -11,7 +11,6 @@ import {
   EmployeeValue,
   FAQ,
   DemoForm,
-  Footer,
   seoMeta,
 } from "@/components/landing/shared";
 
@@ -36,7 +35,6 @@ function LandingPage() {
         <FAQ />
         <DemoForm />
       </main>
-      <Footer />
     </div>
   );
 }
