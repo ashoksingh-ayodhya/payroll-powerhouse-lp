@@ -3,7 +3,6 @@ import {
   Nav,
   HeroClassic,
   ClientLogos,
-  Stats,
   Features,
   Platform,
   Cards,
