@@ -810,39 +810,6 @@ function Select({ label, name, options, required }: { label: string; name: strin
   );
 }
 
-export function Footer() {
-  return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 py-12 grid md:grid-cols-3 gap-8">
-        <div>
-          <img src={IMG.logo} alt="Edenred UAE" className="h-10 w-auto" />
-          <p className="mt-4 text-sm text-muted-foreground max-w-xs">
-            Edenred is a financial technology company. Our Bank Identification Number (BIN) is sponsored by RAKBANK.
-          </p>
-        </div>
-        <div className="text-sm text-muted-foreground">
-          <div className="font-semibold text-navy mb-3">Edenred Payroll</div>
-          <ul className="space-y-2">
-            <li><a href="#features" className="hover:text-primary">Why Edenred</a></li>
-            <li><a href="#platform" className="hover:text-primary">Platform</a></li>
-            <li><a href="#wps" className="hover:text-primary">WPS & Compliance</a></li>
-            <li><a href="#faq" className="hover:text-primary">FAQ</a></li>
-          </ul>
-        </div>
-        <div className="text-sm text-muted-foreground">
-          <div className="font-semibold text-navy mb-3">Talk to sales</div>
-          <ul className="space-y-2">
-            <li><a href="#demo" onClick={scrollToDemo} className="hover:text-primary">Book a free demo</a></li>
-            <li><a href="https://edenred.ae" className="hover:text-primary">edenred.ae</a></li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} Edenred Prepaid Cards Management Services LLC. All rights reserved.</p>
-      </div>
-    </footer>
-  );
-}
 
 export const seoMeta = () => ({
   meta: [
