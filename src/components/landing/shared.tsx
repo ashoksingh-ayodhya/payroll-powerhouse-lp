@@ -104,10 +104,11 @@ export function HeroClassic() {
             UAE's largest WPS-compliant payroll provider
           </div>
           <h1 className="mt-4 lg:mt-5 text-3xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.08] lg:leading-[1.05]">
-            WPS Payroll & <span className="text-primary">Salary Cards</span> built for UAE businesses
+            <span className="text-primary">Edenred Payroll</span> & C3Pay — built for UAE businesses
           </h1>
+          <span className="sr-only">WPS payroll, salary card and payroll card solution for the UAE.</span>
           <p className="mt-4 lg:mt-5 text-base lg:text-lg text-muted-foreground max-w-xl">
-            Run accurate, on-time payroll, issue Mastercard salary cards to every employee, and stay 100% WPS compliant — all from one secure dashboard. Trusted by 15,000+ companies across the UAE.
+            The UAE's largest salary processing provider. Run accurate, on-time payroll with Edenred Payroll, and give every employee a Mastercard-powered C3Pay card — all from one secure dashboard. Trusted by 15,000+ companies across the UAE.
           </p>
           <ul className="mt-5 lg:mt-6 grid sm:grid-cols-2 gap-2.5 lg:gap-3 max-w-xl">
             {[
