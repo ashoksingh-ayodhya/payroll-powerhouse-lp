@@ -76,14 +76,14 @@ export function scrollToDemo(e?: React.MouseEvent) {
 export function Nav() {
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/85 border-b border-border">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 h-20 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
-          <img src={IMG.logo} alt="Edenred UAE" className="h-12 lg:h-14 w-auto" />
+          <img src={IMG.logo} alt="Edenred UAE" className="h-10 lg:h-14 w-auto" />
         </a>
         <a
           href="#demo"
           onClick={scrollToDemo}
-          className="inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold shadow-card hover:opacity-95 transition-opacity"
+          className="inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-4 lg:px-5 py-2.5 text-sm font-semibold shadow-card hover:opacity-95 transition-opacity"
         >
           Book a free demo <ArrowRight className="h-4 w-4" />
         </a>
@@ -95,19 +95,19 @@ export function Nav() {
 export function HeroClassic() {
   return (
     <section id="top" className="relative bg-hero overflow-hidden">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 pt-14 pb-20 lg:pt-20 lg:pb-28 grid lg:grid-cols-12 gap-10 items-center">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8 pt-8 pb-10 lg:pt-20 lg:pb-28 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
         <div className="lg:col-span-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-semibold text-navy shadow-card">
             <BadgeCheck className="h-3.5 w-3.5 text-primary" />
             UAE's largest WPS-compliant payroll provider
           </div>
-          <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.05]">
+          <h1 className="mt-4 lg:mt-5 text-3xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.08] lg:leading-[1.05]">
             WPS Payroll & <span className="text-primary">Salary Cards</span> built for UAE businesses
           </h1>
-          <p className="mt-5 text-lg text-muted-foreground max-w-xl">
+          <p className="mt-4 lg:mt-5 text-base lg:text-lg text-muted-foreground max-w-xl">
             Run accurate, on-time payroll, issue Mastercard salary cards to every employee, and stay 100% WPS compliant — all from one secure dashboard. Trusted by 15,000+ companies across the UAE.
           </p>
-          <ul className="mt-6 grid sm:grid-cols-2 gap-3 max-w-xl">
+          <ul className="mt-5 lg:mt-6 grid sm:grid-cols-2 gap-2.5 lg:gap-3 max-w-xl">
             {[
               "WPS-compliant salary processing",
               "Instant payroll card issuance",
@@ -120,7 +120,7 @@ export function HeroClassic() {
               </li>
             ))}
           </ul>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 lg:mt-8 flex flex-wrap gap-3">
             <a
               href="#demo"
               onClick={scrollToDemo}
@@ -129,14 +129,14 @@ export function HeroClassic() {
               Book a free payroll demo <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <div className="mt-7 lg:mt-10 flex flex-wrap items-center gap-x-6 lg:gap-x-8 gap-y-3 lg:gap-y-4">
             <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Partnered & authorised by</span>
             <img src={IMG.rakbank} alt="RAKBANK" className="h-7 w-auto opacity-90" />
             <img src={IMG.mastercardJaywan} alt="Mastercard Jaywan" className="h-8 w-auto opacity-90" />
             <img src={IMG.mohre} alt="UAE Ministry of Human Resources & Emiratisation" className="h-9 w-auto opacity-90" />
           </div>
         </div>
-        <div className="lg:col-span-5 relative">
+        <div className="hidden lg:block lg:col-span-5 relative">
           <div className="absolute -inset-6 bg-gradient-primary opacity-10 blur-3xl rounded-full" aria-hidden />
           <img
             src={IMG.heroComposite}
