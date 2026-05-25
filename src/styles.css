@@ -174,3 +174,8 @@
   .bg-navy-deep { background-color: var(--navy-deep); }
   .bg-soft { background-color: var(--soft); }
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
