@@ -610,30 +610,30 @@ export function EmployeeValue() {
     { icon: LifeBuoy, title: "24/7 support", desc: "Multilingual support for every employee in their preferred language." },
   ];
   return (
-    <section className="py-12 lg:py-28 bg-soft">
+    <section className="py-10 lg:py-28 bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Section header */}
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">For your employees</p>
-          <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">A salary card your people actually want</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">A salary card your people actually want</h2>
+          <p className="mt-3 lg:mt-4 text-base lg:text-lg text-muted-foreground">
             Happy employees stay longer. The C3Pay salary card, powered by Mastercard, gives your workforce a complete financial app — not just a place to receive wages.
           </p>
         </div>
 
         {/* Main layout: phone showcase + benefits */}
-        <div className="mt-14 grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+        <div className="mt-8 lg:mt-14 grid lg:grid-cols-12 gap-5 lg:gap-8 items-stretch">
           {/* Left: phone showcase tile */}
           <div className="lg:col-span-5 relative overflow-hidden rounded-3xl bg-white border border-border shadow-elegant flex flex-col">
-            <div className="p-8 lg:p-10 border-b border-border">
+            <div className="p-5 lg:p-10 border-b border-border">
               <div className="flex items-center gap-2 text-primary">
                 <Smartphone className="h-4 w-4" />
                 <p className="text-xs font-semibold uppercase tracking-widest">C3Pay mobile app</p>
               </div>
-              <h3 className="mt-3 text-2xl lg:text-3xl font-bold text-navy leading-tight">
+              <h3 className="mt-3 text-xl lg:text-3xl font-bold text-navy leading-tight">
                 One app for salary, spending & sending money home
               </h3>
-              <ul className="mt-5 space-y-2.5">
+              <ul className="mt-4 lg:mt-5 space-y-2 lg:space-y-2.5">
                 {["Mastercard accepted worldwide", "Instant remittance to 130+ countries", "Salary advance on eligibility"].map((t) => (
                   <li key={t} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
@@ -642,7 +642,7 @@ export function EmployeeValue() {
                 ))}
               </ul>
             </div>
-            <div className="relative flex-1 min-h-[360px] overflow-hidden">
+            <div className="relative flex-1 min-h-[220px] lg:min-h-[360px] overflow-hidden">
               <img
                 src={IMG.heroComposite}
                 alt="Employees holding the C3Pay Mastercard salary card and using the mobile app"
@@ -654,11 +654,11 @@ export function EmployeeValue() {
           </div>
 
           {/* Right: benefits grid */}
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5 auto-rows-fr">
+          <div className="lg:col-span-7 -mx-5 px-5 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 sm:gap-5 auto-rows-fr">
             {benefits.map((b) => (
               <div
                 key={b.title}
-                className="group rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant hover:-translate-y-0.5 transition-all flex flex-col"
+                className="group w-[72vw] max-w-[260px] shrink-0 snap-start rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-card hover:shadow-elegant hover:-translate-y-0.5 transition-all flex flex-col sm:w-auto sm:max-w-none"
               >
                 <div className="h-11 w-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <b.icon className="h-5 w-5" />
@@ -683,13 +683,13 @@ export function FAQ() {
     { q: "How much does Edenred Payroll cost?", a: "Pricing is transparent and tailored to your headcount and payroll volume. You receive a single, clear invoice with no hidden fees. Book a demo and our team will share pricing for your business." },
   ];
   return (
-    <section id="faq" className="py-12 lg:py-28 bg-soft">
+    <section id="faq" className="py-10 lg:py-28 bg-soft">
       <div className="mx-auto max-w-4xl px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">FAQ</p>
-          <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">WPS payroll & salary card questions, answered</h2>
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">WPS payroll & salary card questions, answered</h2>
         </div>
-        <div className="mt-12 space-y-3">
+        <div className="mt-8 lg:mt-12 space-y-3">
           {faqs.map((f) => (
             <details key={f.q} className="group rounded-2xl border border-border bg-card p-5 shadow-card open:shadow-elegant transition-shadow">
               <summary className="flex cursor-pointer items-center justify-between gap-4 text-navy font-semibold list-none">
@@ -708,7 +708,7 @@ export function FAQ() {
 export function DemoForm() {
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section id="demo" className="py-12 lg:py-28 bg-navy-deep text-primary-foreground relative overflow-hidden scroll-mt-24">
+    <section id="demo" className="py-10 lg:py-28 bg-navy-deep text-primary-foreground relative overflow-hidden scroll-mt-24">
       <div
         className="absolute inset-0 opacity-30"
         style={{
@@ -717,14 +717,14 @@ export function DemoForm() {
         }}
         aria-hidden
       />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">Book a free demo</p>
-          <h2 className="mt-3 text-3xl lg:text-5xl font-bold">See WPS payroll & salary cards in action</h2>
-          <p className="mt-4 text-lg text-primary-foreground/80 max-w-lg">
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold">See WPS payroll & salary cards in action</h2>
+          <p className="mt-3 lg:mt-4 text-base lg:text-lg text-primary-foreground/80 max-w-lg">
             Tell us about your team and we'll walk you through Edenred Payroll, pricing, and salary card issuance for your business.
           </p>
-          <ul className="mt-8 space-y-3 text-sm">
+          <ul className="mt-5 lg:mt-8 space-y-2.5 lg:space-y-3 text-sm">
             {["Live demo of the payroll dashboard", "Tailored pricing for your headcount", "Onboarding & WPS migration walkthrough"].map((t) => (
               <li key={t} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-primary" />
@@ -732,15 +732,15 @@ export function DemoForm() {
               </li>
             ))}
           </ul>
-          <div className="mt-10 flex flex-wrap items-center gap-6">
-            <img src={IMG.gptw} alt="Great Place to Work UAE Certified 2022-2023" className="h-16 w-auto bg-white/95 rounded-md p-1" />
+          <div className="mt-6 lg:mt-10 flex flex-wrap items-center gap-4 lg:gap-6">
+            <img src={IMG.gptw} alt="Great Place to Work UAE Certified 2022-2023" className="h-12 lg:h-16 w-auto bg-white/95 rounded-md p-1" />
             <div className="text-sm text-primary-foreground/70">
               <div className="font-semibold text-primary-foreground">Great Place to Work® in UAE</div>
               Certified 2022 – 2023
             </div>
           </div>
         </div>
-        <div className="rounded-3xl bg-background text-foreground p-7 lg:p-9 shadow-elegant">
+        <div className="rounded-3xl bg-background text-foreground p-5 lg:p-9 shadow-elegant">
           {submitted ? (
             <div className="py-10 text-center">
               <div className="mx-auto h-14 w-14 rounded-full bg-accent grid place-items-center text-primary">
@@ -757,11 +757,11 @@ export function DemoForm() {
                 e.preventDefault();
                 setSubmitted(true);
               }}
-              className="space-y-4"
+              className="space-y-3.5 lg:space-y-4"
             >
               <h3 className="text-xl font-bold text-navy">Book your payroll demo</h3>
               <p className="text-sm text-muted-foreground -mt-2">No commitment. Response within one business day.</p>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-3 lg:gap-4">
                 <Field label="Full name" name="name" required />
                 <Field label="Work email" name="email" type="email" required />
                 <Field label="Mobile number" name="mobile" type="tel" required />
