@@ -104,10 +104,11 @@ export function HeroClassic() {
             UAE's largest WPS-compliant payroll provider
           </div>
           <h1 className="mt-4 lg:mt-5 text-3xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.08] lg:leading-[1.05]">
-            WPS Payroll & <span className="text-primary">Salary Cards</span> built for UAE businesses
+            <span className="text-primary">Edenred Payroll</span> & C3Pay — built for UAE businesses
           </h1>
+          <span className="sr-only">WPS payroll, salary card and payroll card solution for the UAE.</span>
           <p className="mt-4 lg:mt-5 text-base lg:text-lg text-muted-foreground max-w-xl">
-            Run accurate, on-time payroll, issue Mastercard salary cards to every employee, and stay 100% WPS compliant — all from one secure dashboard. Trusted by 15,000+ companies across the UAE.
+            The UAE's largest salary processing provider. Run accurate, on-time payroll with Edenred Payroll, and give every employee a Mastercard-powered C3Pay card — all from one secure dashboard. Trusted by 15,000+ companies across the UAE.
           </p>
           <ul className="mt-5 lg:mt-6 grid sm:grid-cols-2 gap-2.5 lg:gap-3 max-w-xl">
             {[
@@ -162,10 +163,11 @@ export function HeroWithForm() {
             UAE's largest WPS-compliant payroll provider
           </div>
           <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.05]">
-            WPS Payroll & <span className="text-primary">Salary Cards</span> built for UAE businesses
+            <span className="text-primary">Edenred Payroll</span> & C3Pay — built for UAE businesses
           </h1>
+          <span className="sr-only">WPS payroll, salary card and payroll card solution for the UAE.</span>
           <p className="mt-5 text-lg text-muted-foreground max-w-xl">
-            Run accurate, on-time payroll, issue Mastercard salary cards to every employee, and stay 100% WPS compliant — all from one secure dashboard. Trusted by 15,000+ companies across the UAE.
+            The UAE's largest salary processing provider. Run accurate, on-time payroll with Edenred Payroll, and give every employee a Mastercard-powered C3Pay card — all from one secure dashboard. Trusted by 15,000+ companies across the UAE.
           </p>
           <ul className="mt-6 grid sm:grid-cols-2 gap-3 max-w-xl">
             {[
@@ -658,7 +660,8 @@ export function FAQ() {
       <div className="mx-auto max-w-4xl px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">FAQ</p>
-          <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">WPS payroll & salary card questions, answered</h2>
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">Edenred Payroll & C3Pay — your questions, answered</h2>
+          <span className="sr-only">WPS payroll, salary card and payroll card FAQs for UAE businesses.</span>
         </div>
         <div className="mt-8 lg:mt-12 space-y-3">
           {faqs.map((f) => (
@@ -690,9 +693,10 @@ export function DemoForm() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">Book a free demo</p>
-          <h2 className="mt-3 text-2xl lg:text-5xl font-bold">See WPS payroll & salary cards in action</h2>
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold">See Edenred Payroll & C3Pay in action</h2>
+          <span className="sr-only">Live demo of WPS payroll, salary card and payroll card solution.</span>
           <p className="mt-3 lg:mt-4 text-base lg:text-lg text-primary-foreground/80 max-w-lg">
-            Tell us about your team and we'll walk you through Edenred Payroll, pricing, and salary card issuance for your business.
+            Tell us about your team and we'll walk you through Edenred Payroll, pricing, and C3Pay salary card issuance for your business.
           </p>
           <ul className="mt-5 lg:mt-8 space-y-2.5 lg:space-y-3 text-sm">
             {["Live demo of the payroll dashboard", "Tailored pricing for your headcount", "Onboarding & WPS migration walkthrough"].map((t) => (
@@ -750,6 +754,17 @@ function Select({ label, name, options, required }: { label: string; name: strin
         ))}
       </select>
     </label>
+  );
+}
+
+export function Footer() {
+  const year = new Date().getFullYear();
+  return (
+    <footer className="border-t border-border bg-background">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8 py-5 text-center text-xs text-muted-foreground">
+        © {year} Edenred Prepaid Cards Management Services LLC. All rights reserved.
+      </div>
+    </footer>
   );
 }
 

@@ -10,6 +10,7 @@ import {
   WPS,
   EmployeeValue,
   FAQ,
+  Footer,
   seoMeta,
 } from "@/components/landing/shared";
 
@@ -33,6 +34,8 @@ function LandingPageV2() {
         <EmployeeValue />
         <FAQ />
       </main>
+      <Footer />
     </div>
   );
 }
+
