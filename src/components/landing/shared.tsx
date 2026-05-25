@@ -225,51 +225,32 @@ export function ClientLogos() {
     { k: "24/7", v: "Employee support" },
   ];
   return (
-    <section id="clients" className="py-10 lg:py-14 border-y border-border bg-soft">
+    <section id="clients" className="py-6 lg:py-8 border-y border-border bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Stats row */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6">
           {stats.map((s, i) => (
             <div
               key={s.k}
               className={`flex flex-col items-center text-center ${i < stats.length - 1 ? "lg:border-r" : ""} border-border`}
             >
-              <span className="text-2xl lg:text-3xl font-bold text-primary tracking-tight">{s.k}</span>
-              <span className="mt-1 text-xs lg:text-sm text-muted-foreground">{s.v}</span>
+              <span className="text-xl lg:text-2xl font-bold text-primary tracking-tight">{s.k}</span>
+              <span className="mt-0.5 text-xs text-muted-foreground">{s.v}</span>
             </div>
           ))}
         </div>
 
-        {/* Divider + Logos */}
-        <div className="mt-8 pt-6 border-t border-border">
-          <p className="text-center text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-            Trusted by leading UAE companies
-          </p>
-
-          {/* Desktop logos */}
-          <div className="mt-5 hidden lg:flex items-center justify-between gap-6">
+        {/* Logos - single line, no extra label */}
+        <div className="mt-5 pt-4 border-t border-border">
+          <div className="flex items-center justify-between gap-3 lg:gap-6 overflow-x-auto">
             {logos.map((l) => (
               <img
                 key={l.alt}
                 src={l.src}
                 alt={`${l.alt} – Edenred Payroll client`}
-                className="h-7 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition"
+                className="h-5 lg:h-7 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition shrink-0"
               />
             ))}
-          </div>
-
-          {/* Mobile marquee */}
-          <div className="lg:hidden mt-4 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-            <div className="flex items-center gap-10 animate-[marquee_22s_linear_infinite] w-max">
-              {[...logos, ...logos].map((l, i) => (
-                <img
-                  key={`${l.alt}-${i}`}
-                  src={l.src}
-                  alt={`${l.alt} – Edenred Payroll client`}
-                  className="h-6 w-auto object-contain grayscale opacity-70 shrink-0"
-                />
-              ))}
-            </div>
           </div>
         </div>
       </div>
