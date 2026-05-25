@@ -252,17 +252,42 @@ export function ClientLogos() {
     { src: IMG.client7, alt: "Trusted client" },
   ];
   return (
-    <section id="clients" className="py-16 border-y border-border bg-soft">
+    <section id="clients" className="py-8 lg:py-12 border-y border-border bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <p className="text-center text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-          15,000+ UAE companies run payroll on Edenred
-        </p>
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-x-8 gap-y-6 items-center">
-          {logos.map((l) => (
-            <div key={l.alt} className="flex justify-center grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition">
-              <img src={l.src} alt={`${l.alt} – Edenred Payroll client`} className="h-10 w-auto object-contain" />
+        {/* Desktop: tight inline lockup. Mobile: stacked compact label. */}
+        <div className="hidden lg:flex items-center gap-8">
+          <p className="shrink-0 max-w-[180px] text-xs font-semibold uppercase tracking-widest text-muted-foreground leading-snug border-r border-border pr-8">
+            15,000+ UAE companies trust Edenred
+          </p>
+          <div className="flex-1 flex items-center justify-between gap-6">
+            {logos.map((l) => (
+              <img
+                key={l.alt}
+                src={l.src}
+                alt={`${l.alt} – Edenred Payroll client`}
+                className="h-8 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition"
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile: compact auto-scrolling marquee */}
+        <div className="lg:hidden">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+            Trusted by 15,000+ UAE companies
+          </p>
+          <div className="mt-4 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <div className="flex items-center gap-10 animate-[marquee_22s_linear_infinite] w-max">
+              {[...logos, ...logos].map((l, i) => (
+                <img
+                  key={`${l.alt}-${i}`}
+                  src={l.src}
+                  alt={`${l.alt} – Edenred Payroll client`}
+                  className="h-6 w-auto object-contain grayscale opacity-70 shrink-0"
+                />
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
