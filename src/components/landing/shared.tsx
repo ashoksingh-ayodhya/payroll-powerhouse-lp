@@ -444,23 +444,64 @@ export function WPS() {
     { icon: Users, title: "Employee financial wellness", desc: "Salary advance, instant remittance, mobile recharge to 130+ countries via C3Pay." },
   ];
   return (
-    <section id="wps" className="py-20 lg:py-28 bg-navy text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-5">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">WPS & Compliance</p>
-          <h2 className="mt-3 text-3xl lg:text-5xl font-bold">Stay 100% WPS compliant — without the spreadsheets</h2>
-          <p className="mt-4 text-lg text-primary-foreground/80 max-w-lg">
-            Edenred Payroll handles WPS file generation, salary transfers and reconciliation, so your finance team can stop chasing files and start closing books faster.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-6">
-            <img src={IMG.rakbank} alt="Partnered with RAKBANK" className="h-8 w-auto bg-white rounded-md px-3 py-2" />
-            <img src={IMG.mastercardJaywan} alt="Powered by Mastercard & Jaywan" className="h-10 w-auto bg-white rounded-md px-3 py-1" />
-            <img src={IMG.mohre} alt="Authorised by MoHRE" className="h-12 w-auto bg-white rounded-md px-2 py-1" />
+    <section id="wps" className="relative overflow-hidden py-20 lg:py-28 bg-navy text-primary-foreground">
+      {/* Abstract decorative grid pattern */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
+        <div className="lg:col-span-5 flex flex-col gap-6">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">WPS & Compliance</p>
+            <h2 className="mt-3 text-3xl lg:text-5xl font-bold">Stay 100% WPS compliant — without the spreadsheets</h2>
+            <p className="mt-4 text-lg text-primary-foreground/80 max-w-lg">
+              Edenred Payroll handles WPS file generation, salary transfers and reconciliation, so your finance team can stop chasing files and start closing books faster.
+            </p>
+          </div>
+
+          {/* Abstract bento — fills the left column to match the right grid height */}
+          <div className="mt-2 grid grid-cols-6 gap-4 flex-1 min-h-[320px]">
+            {/* Big stat tile */}
+            <div className="col-span-6 sm:col-span-4 rounded-2xl bg-primary text-primary-foreground p-6 flex flex-col justify-between relative overflow-hidden">
+              <div aria-hidden className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10" />
+              <div aria-hidden className="absolute -right-2 bottom-4 h-16 w-16 rounded-2xl bg-white/10 rotate-12" />
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/80">Trusted by</p>
+              <div>
+                <p className="text-4xl lg:text-5xl font-bold leading-none">15,000+</p>
+                <p className="mt-2 text-sm text-white/85">UAE businesses paying salaries on Edenred</p>
+              </div>
+            </div>
+
+            {/* Small accent tile */}
+            <div className="col-span-3 sm:col-span-2 rounded-2xl bg-white/5 border border-white/10 p-4 flex flex-col justify-between backdrop-blur">
+              <BadgeCheck className="h-6 w-6 text-primary" />
+              <div>
+                <p className="text-2xl font-bold">100%</p>
+                <p className="text-xs text-primary-foreground/70 mt-1">WPS compliant</p>
+              </div>
+            </div>
+
+            {/* Partner logos tile — spans full width */}
+            <div className="col-span-6 rounded-2xl bg-white/5 border border-white/10 p-5 backdrop-blur">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/60 mb-3">Regulated & powered by</p>
+              <div className="flex flex-wrap items-center gap-3">
+                <img src={IMG.rakbank} alt="Partnered with RAKBANK" className="h-8 w-auto bg-white rounded-md px-3 py-2" />
+                <img src={IMG.mastercardJaywan} alt="Powered by Mastercard & Jaywan" className="h-10 w-auto bg-white rounded-md px-3 py-1" />
+                <img src={IMG.mohre} alt="Authorised by MoHRE" className="h-12 w-auto bg-white rounded-md px-2 py-1" />
+              </div>
+            </div>
           </div>
         </div>
+
         <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5">
           {points.map((p) => (
-            <div key={p.title} className="rounded-2xl bg-white/5 border border-white/10 p-5 backdrop-blur">
+            <div key={p.title} className="rounded-2xl bg-white/5 border border-white/10 p-5 backdrop-blur hover:bg-white/[0.07] transition-colors">
               <div className="h-10 w-10 rounded-lg bg-primary/15 text-primary flex items-center justify-center">
                 <p.icon className="h-5 w-5" />
               </div>
