@@ -599,14 +599,15 @@ export function EmployeeValue() {
                 ))}
               </ul>
             </div>
-            <div className="relative flex-1 bg-gradient-to-b from-soft to-white flex items-end justify-center p-6 min-h-[320px]">
+            <div className="relative flex-1 min-h-[360px] overflow-hidden">
               <img
-                src={IMG.heroMobile}
-                alt="Employees using the C3Pay salary card mobile app"
+                src={IMG.heroComposite}
+                alt="Employees holding the C3Pay Mastercard salary card and using the mobile app"
                 loading="lazy"
-                className="w-auto max-w-full h-auto max-h-[460px] object-contain drop-shadow-2xl"
+                className="absolute inset-0 w-full h-full object-cover object-center"
               />
             </div>
+
           </div>
 
           {/* Right: benefits grid */}
