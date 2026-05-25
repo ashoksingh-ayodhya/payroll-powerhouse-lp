@@ -388,36 +388,42 @@ export function Cards() {
   return (
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary">Salary card management</p>
-            <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">
-              Order, replace and cancel <span className="text-primary">payroll cards</span> effortlessly
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-lg">
-              Every employee gets a Mastercard-powered C3Pay salary card — accepted at any ATM, online and in-store worldwide. You stay fully in control of issuance.
-            </p>
-            {/* Real C3Pay card composite from edenred.ae */}
-            <div className="mt-8 relative max-w-md">
-              <div className="absolute -inset-4 bg-gradient-primary opacity-10 blur-2xl rounded-3xl" aria-hidden />
-              <img
-                src={IMG.cards1}
-                alt="Edenred C3Pay Mastercard payroll card"
-                loading="lazy"
-                className="relative w-full h-auto"
-              />
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          {/* Left column — flex so button sits at the bottom */}
+          <div className="flex flex-col">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary">Salary card management</p>
+              <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">
+                Order, replace and cancel <span className="text-primary">payroll cards</span> effortlessly
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-lg">
+                Every employee gets a Mastercard-powered C3Pay salary card — accepted at any ATM, online and in-store worldwide. You stay fully in control of issuance.
+              </p>
+            </div>
+            {/* Card image fills remaining space */}
+            <div className="flex-1 flex items-center justify-center my-6">
+              <div className="relative max-w-[220px] lg:max-w-[260px] w-full">
+                <div className="absolute -inset-4 bg-gradient-primary opacity-10 blur-2xl rounded-3xl" aria-hidden />
+                <img
+                  src={IMG.cards1}
+                  alt="Edenred C3Pay Mastercard payroll card"
+                  loading="lazy"
+                  className="relative w-full h-auto"
+                />
+              </div>
             </div>
             <a
               href="#demo"
               onClick={scrollToDemo}
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-5 py-3 text-sm font-semibold shadow-card hover:opacity-95"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-5 py-3 text-sm font-semibold shadow-card hover:opacity-95 self-start"
             >
               Issue salary cards for your team <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid gap-5">
+          {/* Right column — 3 evenly-sized cards matching left height */}
+          <div className="grid gap-5 grid-rows-3 h-full">
             {items.map((it) => (
-              <div key={it.title} className="flex items-start gap-5 rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant transition-shadow">
+              <div key={it.title} className="flex items-center gap-5 rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant transition-shadow h-full">
                 <div className="h-14 w-14 shrink-0 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center">
                   <it.icon className="h-7 w-7" />
                 </div>
