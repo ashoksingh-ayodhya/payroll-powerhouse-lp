@@ -578,9 +578,9 @@ export function EmployeeValue() {
 
         {/* Bento grid — phone tile on the left matches the height of the 3x2 benefits grid */}
         <div className="mt-12 grid lg:grid-cols-12 gap-5 lg:items-stretch">
-          <div className="lg:col-span-4 relative overflow-hidden rounded-2xl bg-gradient-primary p-8 shadow-elegant flex flex-col">
-            <div className="text-primary-foreground">
-              <p className="text-sm font-semibold uppercase tracking-widest opacity-80">C3Pay app</p>
+          <div className="lg:col-span-4 relative overflow-hidden rounded-2xl bg-white border border-border p-8 shadow-elegant flex flex-col">
+            <div className="text-navy">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary">C3Pay app</p>
               <h3 className="mt-2 text-2xl font-bold leading-tight">One app for salary, spending & sending money home</h3>
             </div>
             <div className="mt-6 flex-1 flex items-end justify-center min-h-0">
@@ -588,7 +588,7 @@ export function EmployeeValue() {
                 src={IMG.heroMobile}
                 alt="Employees using the C3Pay salary card mobile app"
                 loading="lazy"
-                className="w-full max-w-[240px] max-h-[280px] object-contain object-bottom drop-shadow-2xl"
+                className="w-full h-auto object-contain drop-shadow-xl"
               />
             </div>
           </div>
