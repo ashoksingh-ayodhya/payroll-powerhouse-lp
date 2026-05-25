@@ -76,14 +76,14 @@ export function scrollToDemo(e?: React.MouseEvent) {
 export function Nav() {
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/85 border-b border-border">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 h-20 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
-          <img src={IMG.logo} alt="Edenred UAE" className="h-12 lg:h-14 w-auto" />
+          <img src={IMG.logo} alt="Edenred UAE" className="h-10 lg:h-14 w-auto" />
         </a>
         <a
           href="#demo"
           onClick={scrollToDemo}
-          className="inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold shadow-card hover:opacity-95 transition-opacity"
+          className="inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-4 lg:px-5 py-2.5 text-sm font-semibold shadow-card hover:opacity-95 transition-opacity"
         >
           Book a free demo <ArrowRight className="h-4 w-4" />
         </a>
@@ -95,19 +95,19 @@ export function Nav() {
 export function HeroClassic() {
   return (
     <section id="top" className="relative bg-hero overflow-hidden">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 pt-14 pb-20 lg:pt-20 lg:pb-28 grid lg:grid-cols-12 gap-10 items-center">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8 pt-8 pb-10 lg:pt-20 lg:pb-28 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
         <div className="lg:col-span-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-semibold text-navy shadow-card">
             <BadgeCheck className="h-3.5 w-3.5 text-primary" />
             UAE's largest WPS-compliant payroll provider
           </div>
-          <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.05]">
+          <h1 className="mt-4 lg:mt-5 text-3xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.08] lg:leading-[1.05]">
             WPS Payroll & <span className="text-primary">Salary Cards</span> built for UAE businesses
           </h1>
-          <p className="mt-5 text-lg text-muted-foreground max-w-xl">
+          <p className="mt-4 lg:mt-5 text-base lg:text-lg text-muted-foreground max-w-xl">
             Run accurate, on-time payroll, issue Mastercard salary cards to every employee, and stay 100% WPS compliant — all from one secure dashboard. Trusted by 15,000+ companies across the UAE.
           </p>
-          <ul className="mt-6 grid sm:grid-cols-2 gap-3 max-w-xl">
+          <ul className="mt-5 lg:mt-6 grid sm:grid-cols-2 gap-2.5 lg:gap-3 max-w-xl">
             {[
               "WPS-compliant salary processing",
               "Instant payroll card issuance",
@@ -120,7 +120,7 @@ export function HeroClassic() {
               </li>
             ))}
           </ul>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 lg:mt-8 flex flex-wrap gap-3">
             <a
               href="#demo"
               onClick={scrollToDemo}
@@ -129,14 +129,14 @@ export function HeroClassic() {
               Book a free payroll demo <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <div className="mt-7 lg:mt-10 flex flex-wrap items-center gap-x-6 lg:gap-x-8 gap-y-3 lg:gap-y-4">
             <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Partnered & authorised by</span>
             <img src={IMG.rakbank} alt="RAKBANK" className="h-7 w-auto opacity-90" />
             <img src={IMG.mastercardJaywan} alt="Mastercard Jaywan" className="h-8 w-auto opacity-90" />
             <img src={IMG.mohre} alt="UAE Ministry of Human Resources & Emiratisation" className="h-9 w-auto opacity-90" />
           </div>
         </div>
-        <div className="lg:col-span-5 relative">
+        <div className="hidden lg:block lg:col-span-5 relative">
           <div className="absolute -inset-6 bg-gradient-primary opacity-10 blur-3xl rounded-full" aria-hidden />
           <img
             src={IMG.heroComposite}
@@ -306,7 +306,7 @@ export function Stats() {
     { icon: Clock, k: "24/7", v: "Multilingual employee support" },
   ];
   return (
-    <section className="relative overflow-hidden bg-navy text-primary-foreground py-12 lg:py-20">
+    <section className="relative overflow-hidden bg-navy text-primary-foreground py-10 lg:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-60"
@@ -320,20 +320,20 @@ export function Stats() {
           <p className="text-xs lg:text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">By the numbers</p>
           <h2 className="mt-2 text-2xl lg:text-4xl font-bold leading-tight">The UAE's most trusted payroll partner</h2>
         </div>
-        <div className="mt-8 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden bg-white/10 border border-white/10">
+        <div className="mt-6 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden bg-white/10 border border-white/10">
           {stats.map((s) => (
             <div
               key={s.v}
-              className="bg-navy p-5 lg:p-7 flex flex-col gap-3 lg:gap-4 hover:bg-white/[0.03] transition-colors"
+              className="bg-navy p-4 lg:p-7 flex flex-col gap-2.5 lg:gap-4 hover:bg-white/[0.03] transition-colors"
             >
-              <div className="h-9 w-9 lg:h-11 lg:w-11 rounded-lg bg-primary/15 text-primary-foreground flex items-center justify-center ring-1 ring-primary/30">
+              <div className="h-8 w-8 lg:h-11 lg:w-11 rounded-lg bg-primary/15 text-primary-foreground flex items-center justify-center ring-1 ring-primary/30">
                 <s.icon className="h-4 w-4 lg:h-5 lg:w-5" />
               </div>
               <div>
-                <div className="text-3xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                <div className="text-2xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
                   {s.k}
                 </div>
-                <div className="mt-1.5 lg:mt-2 text-xs lg:text-sm text-primary-foreground/70 leading-snug">
+                <div className="mt-1 lg:mt-2 text-[11px] lg:text-sm text-primary-foreground/70 leading-snug">
                   {s.v}
                 </div>
               </div>
@@ -355,22 +355,22 @@ export function Features() {
     { icon: LayoutDashboard, title: "Payroll Designed for You", desc: "Issue salary cards, schedule WPS payroll runs and track transfer status in real-time from a single dashboard." },
   ];
   return (
-    <section id="features" className="py-12 lg:py-28">
+    <section id="features" className="py-10 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Why finance & HR teams choose us</p>
-          <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">Experience the Edenred difference</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">Experience the Edenred difference</h2>
+          <p className="mt-3 lg:mt-4 text-base lg:text-lg text-muted-foreground">
             One platform to process WPS payroll, issue salary cards and give your employees a financial product they actually love.
           </p>
         </div>
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-7 md:mt-12 -mx-5 px-5 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:pb-0 md:gap-6">
           {features.map((f) => (
-            <article key={f.title} className="group rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all">
-              <div className="h-12 w-12 rounded-xl bg-accent text-primary flex items-center justify-center group-hover:bg-gradient-primary group-hover:text-primary-foreground transition-colors">
-                <f.icon className="h-6 w-6" />
+            <article key={f.title} className="group w-[78vw] max-w-[280px] shrink-0 snap-start rounded-2xl border border-border bg-card p-5 md:p-6 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all md:w-auto md:max-w-none">
+              <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-accent text-primary flex items-center justify-center group-hover:bg-gradient-primary group-hover:text-primary-foreground transition-colors">
+                <f.icon className="h-5 w-5 md:h-6 md:w-6" />
               </div>
-              <h3 className="mt-5 text-xl font-semibold text-navy">{f.title}</h3>
+              <h3 className="mt-4 md:mt-5 text-lg md:text-xl font-semibold text-navy">{f.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
             </article>
           ))}
@@ -390,16 +390,33 @@ export function Platform() {
     { img: IMG.better4, title: "Payroll history at your fingertips", desc: "Automated, audit-ready payroll reports — search any month, any employee, any salary transfer instantly." },
   ];
   return (
-    <section id="platform" className="py-12 lg:py-28 bg-soft">
+    <section id="platform" className="py-10 lg:py-28 bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">The platform</p>
-          <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">Modern payroll tech, built for UAE finance teams</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">Modern payroll tech, built for UAE finance teams</h2>
+          <p className="mt-3 lg:mt-4 text-base lg:text-lg text-muted-foreground">
             A single dashboard to run WPS salary transfers, manage payroll cards and approve every transaction — desktop or mobile.
           </p>
         </div>
-        <div className="mt-14 space-y-16 lg:space-y-24">
+        <div className="mt-8 lg:hidden -mx-5 px-5 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar">
+          {rows.map((r, i) => (
+            <article key={r.title} className="w-[82vw] max-w-[315px] shrink-0 snap-start rounded-2xl border border-border bg-card p-4 shadow-card">
+              <div className="rounded-xl bg-navy p-2 shadow-card">
+                <div className="flex items-center gap-1.5 px-1 pb-1.5">
+                  <span className="h-2 w-2 rounded-full bg-primary/80" />
+                  <span className="h-2 w-2 rounded-full bg-primary-foreground/30" />
+                  <span className="h-2 w-2 rounded-full bg-primary-foreground/30" />
+                </div>
+                <img src={r.img} alt={r.title} loading="lazy" className="aspect-[16/10] w-full rounded-lg bg-background object-cover object-left-top" />
+              </div>
+              <div className="mt-4 text-[11px] font-bold uppercase tracking-wider text-primary">Feature 0{i + 1}</div>
+              <h3 className="mt-1.5 text-lg font-bold text-navy leading-snug">{r.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-14 hidden lg:block space-y-24">
           {rows.map((r, i) => (
             <div key={r.title} className={`grid lg:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""}`}>
               <div className="relative">
@@ -441,23 +458,23 @@ export function Cards() {
     { icon: ShieldCheck, title: "Live delivery tracking", desc: "Cards delivered directly to you with full live tracking so nothing falls through the cracks." },
   ];
   return (
-    <section className="py-12 lg:py-28">
+    <section className="py-10 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left column — flex so button sits at the bottom */}
           <div className="flex flex-col">
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">Salary card management</p>
-              <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">
+              <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">
                 Order, replace and cancel <span className="text-primary">payroll cards</span> effortlessly
               </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-lg">
+              <p className="mt-3 lg:mt-4 text-base lg:text-lg text-muted-foreground max-w-lg">
                 Every employee gets a Mastercard-powered C3Pay salary card — accepted at any ATM, online and in-store worldwide. You stay fully in control of issuance.
               </p>
             </div>
             {/* Card image fills remaining space */}
-            <div className="flex-1 flex items-center justify-center my-6">
-              <div className="relative max-w-[220px] lg:max-w-[260px] w-full">
+            <div className="flex-1 flex items-center justify-center my-5 lg:my-6">
+              <div className="relative max-w-[170px] lg:max-w-[260px] w-full">
                 <div className="absolute -inset-4 bg-gradient-primary opacity-10 blur-2xl rounded-3xl" aria-hidden />
                 <img
                   src={IMG.cards1}
@@ -476,15 +493,15 @@ export function Cards() {
             </a>
           </div>
           {/* Right column — 3 evenly-sized cards matching left height */}
-          <div className="grid gap-5 grid-rows-3 h-full">
+          <div className="grid gap-4 lg:gap-5 grid-rows-3 h-full">
             {items.map((it) => (
-              <div key={it.title} className="flex items-center gap-5 rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant transition-shadow h-full">
-                <div className="h-14 w-14 shrink-0 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center">
-                  <it.icon className="h-7 w-7" />
+              <div key={it.title} className="flex items-center gap-4 lg:gap-5 rounded-2xl border border-border bg-card p-4 lg:p-6 shadow-card hover:shadow-elegant transition-shadow h-full">
+                <div className="h-11 w-11 lg:h-14 lg:w-14 shrink-0 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center">
+                  <it.icon className="h-5 w-5 lg:h-7 lg:w-7" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-navy text-lg">{it.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{it.desc}</p>
+                  <h3 className="font-semibold text-navy text-base lg:text-lg">{it.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1 lg:mt-1.5 leading-relaxed">{it.desc}</p>
                 </div>
               </div>
             ))}
@@ -505,7 +522,7 @@ export function WPS() {
     { icon: Users, title: "Employee financial wellness", desc: "Salary advance, instant remittance, mobile recharge to 130+ countries via C3Pay." },
   ];
   return (
-    <section id="wps" className="relative overflow-hidden py-12 lg:py-28 bg-navy text-primary-foreground">
+    <section id="wps" className="relative overflow-hidden py-10 lg:py-28 bg-navy text-primary-foreground">
       {/* Abstract decorative grid pattern */}
       <div
         aria-hidden
@@ -516,41 +533,41 @@ export function WPS() {
           backgroundSize: "48px 48px",
         }}
       />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12 lg:items-stretch">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-12 gap-8 lg:gap-12 lg:items-stretch">
         <div className="lg:col-span-5 flex flex-col">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">WPS & Compliance</p>
-            <h2 className="mt-3 text-3xl lg:text-5xl font-bold">Stay 100% WPS compliant — without the spreadsheets</h2>
-            <p className="mt-4 text-lg text-primary-foreground/80 max-w-lg">
+            <h2 className="mt-3 text-2xl lg:text-5xl font-bold">Stay 100% WPS compliant — without the spreadsheets</h2>
+            <p className="mt-3 lg:mt-4 text-base lg:text-lg text-primary-foreground/80 max-w-lg">
               Edenred Payroll handles WPS file generation, salary transfers and reconciliation, so your finance team can stop chasing files and start closing books faster.
             </p>
           </div>
 
           {/* Bento — fills remaining height to match right grid */}
-          <div className="mt-8 grid grid-cols-2 gap-4 flex-1 auto-rows-fr">
+          <div className="mt-6 lg:mt-8 grid grid-cols-2 gap-3 lg:gap-4 flex-1 auto-rows-fr">
             {/* Stat tile 1 */}
-            <div className="rounded-2xl bg-primary text-primary-foreground p-6 flex flex-col justify-between relative overflow-hidden min-h-[180px]">
+            <div className="rounded-2xl bg-primary text-primary-foreground p-4 lg:p-6 flex flex-col justify-between relative overflow-hidden min-h-[128px] lg:min-h-[180px]">
               <div aria-hidden className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10" />
               <div aria-hidden className="absolute -right-2 bottom-4 h-16 w-16 rounded-2xl bg-white/10 rotate-12" />
               <p className="text-xs font-semibold uppercase tracking-widest text-white/80">Trusted by</p>
               <div>
-                <p className="text-4xl lg:text-5xl font-bold leading-none">15,000+</p>
-                <p className="mt-2 text-sm text-white/85">UAE businesses on Edenred</p>
+                <p className="text-3xl lg:text-5xl font-bold leading-none">15,000+</p>
+                <p className="mt-1.5 lg:mt-2 text-xs lg:text-sm text-white/85">UAE businesses on Edenred</p>
               </div>
             </div>
 
             {/* Stat tile 2 — equal height */}
-            <div className="rounded-2xl bg-white/[0.06] border border-white/10 p-6 flex flex-col justify-between backdrop-blur relative overflow-hidden min-h-[180px]">
+            <div className="rounded-2xl bg-white/[0.06] border border-white/10 p-4 lg:p-6 flex flex-col justify-between backdrop-blur relative overflow-hidden min-h-[128px] lg:min-h-[180px]">
               <div aria-hidden className="absolute -left-6 -bottom-6 h-24 w-24 rounded-full bg-primary/20 blur-2xl" />
               <BadgeCheck className="h-7 w-7 text-primary" />
               <div>
-                <p className="text-4xl lg:text-5xl font-bold leading-none">100%</p>
-                <p className="mt-2 text-sm text-primary-foreground/75">WPS compliant & MoHRE authorised</p>
+                <p className="text-3xl lg:text-5xl font-bold leading-none">100%</p>
+                <p className="mt-1.5 lg:mt-2 text-xs lg:text-sm text-primary-foreground/75">WPS compliant & MoHRE authorised</p>
               </div>
             </div>
 
             {/* Partner logos tile — full width, fills remaining */}
-            <div className="col-span-2 rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur flex-1 flex flex-col justify-between gap-4">
+            <div className="col-span-2 rounded-2xl bg-white/[0.06] border border-white/10 p-4 lg:p-5 backdrop-blur flex-1 flex flex-col justify-between gap-3 lg:gap-4">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/60">Regulated & powered by</p>
               <div className="grid grid-cols-3 gap-3 items-center">
                 <div className="bg-white rounded-lg h-12 flex items-center justify-center px-3">
@@ -567,14 +584,14 @@ export function WPS() {
           </div>
         </div>
 
-        <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5 auto-rows-fr">
+        <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-2 gap-3 lg:gap-5 auto-rows-fr">
           {points.map((p) => (
-            <div key={p.title} className="rounded-2xl bg-white/5 border border-white/10 p-5 backdrop-blur hover:bg-white/[0.07] transition-colors flex flex-col">
-              <div className="h-10 w-10 rounded-lg bg-primary/15 text-primary flex items-center justify-center">
-                <p.icon className="h-5 w-5" />
+            <div key={p.title} className="rounded-2xl bg-white/5 border border-white/10 p-3.5 lg:p-5 backdrop-blur hover:bg-white/[0.07] transition-colors flex flex-col">
+              <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-lg bg-primary/15 text-primary flex items-center justify-center">
+                <p.icon className="h-4 w-4 lg:h-5 lg:w-5" />
               </div>
-              <h3 className="mt-4 font-semibold text-primary-foreground">{p.title}</h3>
-              <p className="mt-1.5 text-sm text-primary-foreground/70">{p.desc}</p>
+              <h3 className="mt-3 lg:mt-4 text-sm lg:text-base font-semibold text-primary-foreground leading-snug">{p.title}</h3>
+              <p className="mt-1.5 text-xs lg:text-sm text-primary-foreground/70 leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -593,30 +610,30 @@ export function EmployeeValue() {
     { icon: LifeBuoy, title: "24/7 support", desc: "Multilingual support for every employee in their preferred language." },
   ];
   return (
-    <section className="py-12 lg:py-28 bg-soft">
+    <section className="py-10 lg:py-28 bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Section header */}
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">For your employees</p>
-          <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">A salary card your people actually want</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">A salary card your people actually want</h2>
+          <p className="mt-3 lg:mt-4 text-base lg:text-lg text-muted-foreground">
             Happy employees stay longer. The C3Pay salary card, powered by Mastercard, gives your workforce a complete financial app — not just a place to receive wages.
           </p>
         </div>
 
         {/* Main layout: phone showcase + benefits */}
-        <div className="mt-14 grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+        <div className="mt-8 lg:mt-14 grid lg:grid-cols-12 gap-5 lg:gap-8 items-stretch">
           {/* Left: phone showcase tile */}
           <div className="lg:col-span-5 relative overflow-hidden rounded-3xl bg-white border border-border shadow-elegant flex flex-col">
-            <div className="p-8 lg:p-10 border-b border-border">
+            <div className="p-5 lg:p-10 border-b border-border">
               <div className="flex items-center gap-2 text-primary">
                 <Smartphone className="h-4 w-4" />
                 <p className="text-xs font-semibold uppercase tracking-widest">C3Pay mobile app</p>
               </div>
-              <h3 className="mt-3 text-2xl lg:text-3xl font-bold text-navy leading-tight">
+              <h3 className="mt-3 text-xl lg:text-3xl font-bold text-navy leading-tight">
                 One app for salary, spending & sending money home
               </h3>
-              <ul className="mt-5 space-y-2.5">
+              <ul className="mt-4 lg:mt-5 space-y-2 lg:space-y-2.5">
                 {["Mastercard accepted worldwide", "Instant remittance to 130+ countries", "Salary advance on eligibility"].map((t) => (
                   <li key={t} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
@@ -625,7 +642,7 @@ export function EmployeeValue() {
                 ))}
               </ul>
             </div>
-            <div className="relative flex-1 min-h-[360px] overflow-hidden">
+            <div className="relative flex-1 min-h-[220px] lg:min-h-[360px] overflow-hidden">
               <img
                 src={IMG.heroComposite}
                 alt="Employees holding the C3Pay Mastercard salary card and using the mobile app"
@@ -637,11 +654,11 @@ export function EmployeeValue() {
           </div>
 
           {/* Right: benefits grid */}
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5 auto-rows-fr">
+          <div className="lg:col-span-7 -mx-5 px-5 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 sm:gap-5 auto-rows-fr">
             {benefits.map((b) => (
               <div
                 key={b.title}
-                className="group rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant hover:-translate-y-0.5 transition-all flex flex-col"
+                className="group w-[72vw] max-w-[260px] shrink-0 snap-start rounded-2xl border border-border bg-card p-5 sm:p-6 shadow-card hover:shadow-elegant hover:-translate-y-0.5 transition-all flex flex-col sm:w-auto sm:max-w-none"
               >
                 <div className="h-11 w-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <b.icon className="h-5 w-5" />
@@ -666,13 +683,13 @@ export function FAQ() {
     { q: "How much does Edenred Payroll cost?", a: "Pricing is transparent and tailored to your headcount and payroll volume. You receive a single, clear invoice with no hidden fees. Book a demo and our team will share pricing for your business." },
   ];
   return (
-    <section id="faq" className="py-12 lg:py-28 bg-soft">
+    <section id="faq" className="py-10 lg:py-28 bg-soft">
       <div className="mx-auto max-w-4xl px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">FAQ</p>
-          <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">WPS payroll & salary card questions, answered</h2>
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">WPS payroll & salary card questions, answered</h2>
         </div>
-        <div className="mt-12 space-y-3">
+        <div className="mt-8 lg:mt-12 space-y-3">
           {faqs.map((f) => (
             <details key={f.q} className="group rounded-2xl border border-border bg-card p-5 shadow-card open:shadow-elegant transition-shadow">
               <summary className="flex cursor-pointer items-center justify-between gap-4 text-navy font-semibold list-none">
@@ -691,7 +708,7 @@ export function FAQ() {
 export function DemoForm() {
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section id="demo" className="py-12 lg:py-28 bg-navy-deep text-primary-foreground relative overflow-hidden scroll-mt-24">
+    <section id="demo" className="py-10 lg:py-28 bg-navy-deep text-primary-foreground relative overflow-hidden scroll-mt-24">
       <div
         className="absolute inset-0 opacity-30"
         style={{
@@ -700,14 +717,14 @@ export function DemoForm() {
         }}
         aria-hidden
       />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">Book a free demo</p>
-          <h2 className="mt-3 text-3xl lg:text-5xl font-bold">See WPS payroll & salary cards in action</h2>
-          <p className="mt-4 text-lg text-primary-foreground/80 max-w-lg">
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold">See WPS payroll & salary cards in action</h2>
+          <p className="mt-3 lg:mt-4 text-base lg:text-lg text-primary-foreground/80 max-w-lg">
             Tell us about your team and we'll walk you through Edenred Payroll, pricing, and salary card issuance for your business.
           </p>
-          <ul className="mt-8 space-y-3 text-sm">
+          <ul className="mt-5 lg:mt-8 space-y-2.5 lg:space-y-3 text-sm">
             {["Live demo of the payroll dashboard", "Tailored pricing for your headcount", "Onboarding & WPS migration walkthrough"].map((t) => (
               <li key={t} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-primary" />
@@ -715,15 +732,15 @@ export function DemoForm() {
               </li>
             ))}
           </ul>
-          <div className="mt-10 flex flex-wrap items-center gap-6">
-            <img src={IMG.gptw} alt="Great Place to Work UAE Certified 2022-2023" className="h-16 w-auto bg-white/95 rounded-md p-1" />
+          <div className="mt-6 lg:mt-10 flex flex-wrap items-center gap-4 lg:gap-6">
+            <img src={IMG.gptw} alt="Great Place to Work UAE Certified 2022-2023" className="h-12 lg:h-16 w-auto bg-white/95 rounded-md p-1" />
             <div className="text-sm text-primary-foreground/70">
               <div className="font-semibold text-primary-foreground">Great Place to Work® in UAE</div>
               Certified 2022 – 2023
             </div>
           </div>
         </div>
-        <div className="rounded-3xl bg-background text-foreground p-7 lg:p-9 shadow-elegant">
+        <div className="rounded-3xl bg-background text-foreground p-5 lg:p-9 shadow-elegant">
           {submitted ? (
             <div className="py-10 text-center">
               <div className="mx-auto h-14 w-14 rounded-full bg-accent grid place-items-center text-primary">
@@ -740,11 +757,11 @@ export function DemoForm() {
                 e.preventDefault();
                 setSubmitted(true);
               }}
-              className="space-y-4"
+              className="space-y-3.5 lg:space-y-4"
             >
               <h3 className="text-xl font-bold text-navy">Book your payroll demo</h3>
               <p className="text-sm text-muted-foreground -mt-2">No commitment. Response within one business day.</p>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-3 lg:gap-4">
                 <Field label="Full name" name="name" required />
                 <Field label="Work email" name="email" type="email" required />
                 <Field label="Mobile number" name="mobile" type="tel" required />
