@@ -263,45 +263,56 @@ export function ClientLogos() {
 
 export function Stats() {
   const stats = [
-    { icon: Building2, k: "15,000+", v: "UAE businesses trust Edenred Payroll" },
-    { icon: BadgeCheck, k: "#1", v: "Largest salary processor in the UAE" },
-    { icon: ShieldCheck, k: "100%", v: "WPS compliant & MoHRE authorised" },
-    { icon: Clock, k: "24/7", v: "Multilingual employee support" },
+    { k: "15,000+", v: "UAE businesses trust Edenred Payroll to deliver for their teams." },
+    { k: "#1", v: "Largest salary processor in the UAE, powering the workforce." },
+    { k: "100%", v: "WPS compliant & MoHRE authorised for absolute peace of mind." },
+    { k: "24/7", v: "Multilingual employee support, available whenever they need it." },
   ];
   return (
-    <section className="relative overflow-hidden bg-navy text-primary-foreground py-10 lg:py-14">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-60"
-        style={{
-          background:
-            "radial-gradient(60% 80% at 85% 15%, oklch(0.605 0.232 27.5 / 0.35), transparent 60%), radial-gradient(40% 60% at 10% 90%, oklch(0.605 0.232 27.5 / 0.18), transparent 60%)",
-        }}
-      />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="max-w-2xl">
-          <p className="text-xs lg:text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">By the numbers</p>
-          <h2 className="mt-2 text-2xl lg:text-4xl font-bold leading-tight">The UAE's most trusted payroll partner</h2>
-        </div>
-        <div className="mt-6 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden bg-white/10 border border-white/10">
-          {stats.map((s) => (
-            <div
-              key={s.v}
-              className="bg-navy p-4 lg:p-7 flex flex-col gap-2.5 lg:gap-4 hover:bg-white/[0.03] transition-colors"
-            >
-              <div className="h-8 w-8 lg:h-11 lg:w-11 rounded-lg bg-primary/15 text-primary-foreground flex items-center justify-center ring-1 ring-primary/30">
-                <s.icon className="h-4 w-4 lg:h-5 lg:w-5" />
-              </div>
-              <div>
-                <div className="text-2xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
-                  {s.k}
-                </div>
-                <div className="mt-1 lg:mt-2 text-[11px] lg:text-sm text-primary-foreground/70 leading-snug">
-                  {s.v}
-                </div>
+    <section className="py-10 lg:py-20 px-4 lg:px-6">
+      <div className="mx-auto max-w-7xl">
+        <div className="relative overflow-hidden rounded-3xl bg-navy shadow-2xl shadow-navy/20">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute top-0 right-0 w-1/2 h-full"
+            style={{ background: "linear-gradient(to bottom right, oklch(0.605 0.232 27.5 / 0.10), transparent)" }}
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -bottom-24 -left-24 w-64 h-64 rounded-full blur-3xl"
+            style={{ background: "oklch(0.605 0.232 27.5 / 0.08)" }}
+          />
+
+          <div className="relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-12 p-8 md:p-14 lg:p-20 items-center">
+            <div className="lg:col-span-5 space-y-4">
+              <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase">
+                By the numbers
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight">
+                The UAE's most <span className="text-primary">trusted</span> payroll partner
+              </h2>
+              <div className="w-12 h-1 bg-primary mt-6" />
+            </div>
+
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
+                {stats.map((s) => (
+                  <div
+                    key={s.k}
+                    className="group bg-white/5 border border-white/10 backdrop-blur-sm p-6 lg:p-8 rounded-2xl hover:border-primary/50 transition-all duration-300"
+                  >
+                    <div className="flex flex-col space-y-2">
+                      <div className="flex items-center space-x-2">
+                        <span className="w-1.5 h-6 bg-primary rounded-full group-hover:h-8 transition-all duration-300" />
+                        <span className="text-3xl lg:text-4xl font-bold text-primary-foreground tracking-tight">{s.k}</span>
+                      </div>
+                      <p className="text-primary-foreground/70 text-sm leading-relaxed">{s.v}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
