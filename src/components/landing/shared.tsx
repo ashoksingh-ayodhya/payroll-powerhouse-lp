@@ -15,6 +15,10 @@ import {
   Globe2,
   Clock,
   BadgeCheck,
+  Send,
+  Phone,
+  LifeBuoy,
+  Wallet,
 } from "lucide-react";
 
 // Assets hosted on edenred.ae (per user requirement: only use site images).
@@ -555,52 +559,68 @@ export function WPS() {
 
 export function EmployeeValue() {
   const benefits = [
-    { title: "Use anywhere", desc: "Withdraw at any ATM, pay online or at any store worldwide on Mastercard." },
-    { title: "Send money home", desc: "Instant low-cost remittance to families across 130+ countries." },
-    { title: "Mobile recharge", desc: "Recharge phone balance in the UAE and across 130+ countries instantly." },
-    { title: "Fraud protection", desc: "On-demand card block, SMS alerts and advanced data protection." },
-    { title: "Salary advance", desc: "Eligible employees can access short-term funds at nominal rates." },
-    { title: "24/7 support", desc: "Multilingual support for every employee." },
+    { icon: Globe2, title: "Use anywhere", desc: "Withdraw at any ATM, pay online or at any store worldwide on Mastercard." },
+    { icon: Send, title: "Send money home", desc: "Instant low-cost remittance to families across 130+ countries." },
+    { icon: Phone, title: "Mobile recharge", desc: "Recharge phone balance in the UAE and across 130+ countries instantly." },
+    { icon: ShieldCheck, title: "Fraud protection", desc: "On-demand card block, SMS alerts and advanced data protection." },
+    { icon: Wallet, title: "Salary advance", desc: "Eligible employees can access short-term funds at nominal rates." },
+    { icon: LifeBuoy, title: "24/7 support", desc: "Multilingual support for every employee in their preferred language." },
   ];
   return (
     <section className="py-20 lg:py-28 bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        {/* Balanced header — full width, centered intent on the left, supporting copy on the right */}
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-          <div className="lg:col-span-7">
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary">For your employees</p>
-            <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">A salary card your people actually want</h2>
-          </div>
-          <p className="lg:col-span-5 text-lg text-muted-foreground">
+        {/* Section header */}
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">For your employees</p>
+          <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">A salary card your people actually want</h2>
+          <p className="mt-4 text-lg text-muted-foreground">
             Happy employees stay longer. The C3Pay salary card, powered by Mastercard, gives your workforce a complete financial app — not just a place to receive wages.
           </p>
         </div>
 
-        {/* Bento grid — phone tile on the left matches the height of the 3x2 benefits grid */}
-        <div className="mt-12 grid lg:grid-cols-12 gap-5 lg:items-stretch">
-          <div className="lg:col-span-4 relative overflow-hidden rounded-2xl bg-white border border-border p-8 shadow-elegant flex flex-col">
-            <div className="text-navy">
-              <p className="text-sm font-semibold uppercase tracking-widest text-primary">C3Pay app</p>
-              <h3 className="mt-2 text-2xl font-bold leading-tight">One app for salary, spending & sending money home</h3>
+        {/* Main layout: phone showcase + benefits */}
+        <div className="mt-14 grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+          {/* Left: phone showcase tile */}
+          <div className="lg:col-span-5 relative overflow-hidden rounded-3xl bg-white border border-border shadow-elegant flex flex-col">
+            <div className="p-8 lg:p-10 border-b border-border">
+              <div className="flex items-center gap-2 text-primary">
+                <Smartphone className="h-4 w-4" />
+                <p className="text-xs font-semibold uppercase tracking-widest">C3Pay mobile app</p>
+              </div>
+              <h3 className="mt-3 text-2xl lg:text-3xl font-bold text-navy leading-tight">
+                One app for salary, spending & sending money home
+              </h3>
+              <ul className="mt-5 space-y-2.5">
+                {["Mastercard accepted worldwide", "Instant remittance to 130+ countries", "Salary advance on eligibility"].map((t) => (
+                  <li key={t} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="mt-6 flex-1 flex items-end justify-center min-h-0">
+            <div className="relative flex-1 bg-gradient-to-b from-soft to-white flex items-end justify-center p-6 min-h-[320px]">
               <img
                 src={IMG.heroMobile}
                 alt="Employees using the C3Pay salary card mobile app"
                 loading="lazy"
-                className="w-full h-auto object-contain drop-shadow-xl"
+                className="w-auto max-w-full h-auto max-h-[460px] object-contain drop-shadow-2xl"
               />
             </div>
           </div>
 
-          <div className="lg:col-span-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {/* Right: benefits grid */}
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5 auto-rows-fr">
             {benefits.map((b) => (
-              <div key={b.title} className="rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant transition-shadow">
-                <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <CreditCard className="h-5 w-5 text-primary" />
+              <div
+                key={b.title}
+                className="group rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant hover:-translate-y-0.5 transition-all flex flex-col"
+              >
+                <div className="h-11 w-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <b.icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-4 font-semibold text-navy">{b.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{b.desc}</p>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>
