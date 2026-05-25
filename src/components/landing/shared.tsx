@@ -306,7 +306,7 @@ export function Stats() {
     { icon: Clock, k: "24/7", v: "Multilingual employee support" },
   ];
   return (
-    <section className="relative overflow-hidden bg-navy text-primary-foreground py-10 lg:py-20">
+    <section className="relative overflow-hidden bg-navy text-primary-foreground py-10 lg:py-14">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-60"
@@ -355,7 +355,7 @@ export function Features() {
     { icon: LayoutDashboard, title: "Payroll Designed for You", desc: "Issue salary cards, schedule WPS payroll runs and track transfer status in real-time from a single dashboard." },
   ];
   return (
-    <section id="features" className="py-10 lg:py-28">
+    <section id="features" className="py-10 lg:py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Why finance & HR teams choose us</p>
@@ -390,7 +390,7 @@ export function Platform() {
     { img: IMG.better4, title: "Payroll history at your fingertips", desc: "Automated, audit-ready payroll reports — search any month, any employee, any salary transfer instantly." },
   ];
   return (
-    <section id="platform" className="py-10 lg:py-28 bg-soft">
+    <section id="platform" className="py-10 lg:py-16 bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">The platform</p>
@@ -458,7 +458,7 @@ export function Cards() {
     { icon: ShieldCheck, title: "Live delivery tracking", desc: "Cards delivered directly to you with full live tracking so nothing falls through the cracks." },
   ];
   return (
-    <section className="py-10 lg:py-28">
+    <section className="py-10 lg:py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left column — flex so button sits at the bottom */}
@@ -522,7 +522,7 @@ export function WPS() {
     { icon: Users, title: "Employee financial wellness", desc: "Salary advance, instant remittance, mobile recharge to 130+ countries via C3Pay." },
   ];
   return (
-    <section id="wps" className="relative overflow-hidden py-10 lg:py-28 bg-navy text-primary-foreground">
+    <section id="wps" className="relative overflow-hidden py-10 lg:py-16 bg-navy text-primary-foreground">
       {/* Abstract decorative grid pattern */}
       <div
         aria-hidden
@@ -610,7 +610,7 @@ export function EmployeeValue() {
     { icon: LifeBuoy, title: "24/7 support", desc: "Multilingual support for every employee in their preferred language." },
   ];
   return (
-    <section className="py-10 lg:py-28 bg-soft">
+    <section className="py-10 lg:py-16 bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Section header */}
         <div className="max-w-3xl">
@@ -683,7 +683,7 @@ export function FAQ() {
     { q: "How much does Edenred Payroll cost?", a: "Pricing is transparent and tailored to your headcount and payroll volume. You receive a single, clear invoice with no hidden fees. Book a demo and our team will share pricing for your business." },
   ];
   return (
-    <section id="faq" className="py-10 lg:py-28 bg-soft">
+    <section id="faq" className="py-10 lg:py-16 bg-soft">
       <div className="mx-auto max-w-4xl px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">FAQ</p>
@@ -708,7 +708,7 @@ export function FAQ() {
 export function DemoForm() {
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section id="demo" className="py-10 lg:py-28 bg-navy-deep text-primary-foreground relative overflow-hidden scroll-mt-24">
+    <section id="demo" className="py-10 lg:py-16 bg-navy-deep text-primary-foreground relative overflow-hidden scroll-mt-24">
       <div
         className="absolute inset-0 opacity-30"
         style={{
