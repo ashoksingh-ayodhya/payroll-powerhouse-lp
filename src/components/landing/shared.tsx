@@ -220,26 +220,27 @@ function InlineDemoForm() {
           className="space-y-3.5"
         >
           <div>
-            <h3 className="text-xl font-bold text-navy">Book your payroll demo</h3>
+            <h3 className="text-xl font-bold text-navy">Book a free demo</h3>
             <p className="text-sm text-muted-foreground mt-1">No commitment. Response within one business day.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3.5">
-            <Field label="Full name" name="name" required />
-            <Field label="Work email" name="email" type="email" required />
-            <Field label="Mobile number" name="mobile" type="tel" required />
-            <Field label="Company name" name="company" required />
-            <Select label="Company size" name="size" options={["1 – 99", "100 – 249", "250 – 999", "1000+"]} required />
-            <Select label="Emirate" name="emirate" options={["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"]} required />
+            <Field label="Your Full Name" name="Your Full Name" required />
+            <Field label="Your Work Email" name="Your Work Email" type="email" required />
+            <Field label="Mobile Phone Number" name="Mobile Phone Number" type="tel" required />
+            <Field label="Your Company Name" name="Your Company Name" required />
+            <Select label="Select number of employees" name="Select number of employees" options={["1 - 99 employees", "100 - 250 employees", "250 - 999 employees", "1000+ employees"]} required />
+            <Select label="Emirate" name="Emirate" options={["Dubai", "Sharjah", "Abu Dhabi", "Ras Al Khaimah", "Ajman", "Umm Al Quwain", "Fujairah"]} required />
           </div>
+          <label className="flex items-start gap-2.5 text-xs text-muted-foreground leading-relaxed">
+            <input type="checkbox" name="Consent to marketing communications" required className="mt-0.5 h-4 w-4 rounded border-input accent-primary" />
+            <span>I/we consent to the usage of my/our personal data to send marketing communications tailored to my/our interests.</span>
+          </label>
           <button
             type="submit"
             className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-6 py-3.5 text-sm font-semibold shadow-card hover:opacity-95"
           >
-            Book a free demo <ArrowRight className="h-4 w-4" />
+            Book a demo <ArrowRight className="h-4 w-4" />
           </button>
-          <p className="text-xs text-muted-foreground text-center">
-            By submitting, you agree to be contacted by Edenred UAE about payroll services.
-          </p>
         </form>
       )}
     </div>
@@ -814,25 +815,26 @@ export function DemoForm() {
               }}
               className="space-y-3.5 lg:space-y-4"
             >
-              <h3 className="text-xl font-bold text-navy">Book your payroll demo</h3>
+              <h3 className="text-xl font-bold text-navy">Book a free demo</h3>
               <p className="text-sm text-muted-foreground -mt-2">No commitment. Response within one business day.</p>
               <div className="grid sm:grid-cols-2 gap-3 lg:gap-4">
-                <Field label="Full name" name="name" required />
-                <Field label="Work email" name="email" type="email" required />
-                <Field label="Mobile number" name="mobile" type="tel" required />
-                <Field label="Company name" name="company" required />
-                <Select label="Company size" name="size" options={["1 – 99 employees", "100 – 249 employees", "250 – 999 employees", "1000+ employees"]} required />
-                <Select label="Emirate" name="emirate" options={["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"]} required />
+                <Field label="Your Full Name" name="Your Full Name" required />
+                <Field label="Your Work Email" name="Your Work Email" type="email" required />
+                <Field label="Mobile Phone Number" name="Mobile Phone Number" type="tel" required />
+                <Field label="Your Company Name" name="Your Company Name" required />
+                <Select label="Select number of employees" name="Select number of employees" options={["1 - 99 employees", "100 - 250 employees", "250 - 999 employees", "1000+ employees"]} required />
+                <Select label="Emirate" name="Emirate" options={["Dubai", "Sharjah", "Abu Dhabi", "Ras Al Khaimah", "Ajman", "Umm Al Quwain", "Fujairah"]} required />
               </div>
+              <label className="flex items-start gap-2.5 text-xs text-muted-foreground leading-relaxed">
+                <input type="checkbox" name="Consent to marketing communications" required className="mt-0.5 h-4 w-4 rounded border-input accent-primary" />
+                <span>I/we consent to the usage of my/our personal data to send marketing communications tailored to my/our interests.</span>
+              </label>
               <button
                 type="submit"
                 className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-6 py-3.5 text-sm font-semibold shadow-card hover:opacity-95"
               >
-                Book a free demo <ArrowRight className="h-4 w-4" />
+                Book a demo <ArrowRight className="h-4 w-4" />
               </button>
-              <p className="text-xs text-muted-foreground text-center">
-                By submitting, you agree to be contacted by Edenred UAE about payroll services.
-              </p>
             </form>
           )}
         </div>
