@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   ShieldCheck,
   Zap,
@@ -380,6 +381,105 @@ export function Features() {
   );
 }
 
+type PlatformRow = { img: string; title: string; desc: string };
+
+function PlatformCarousel({ rows }: { rows: PlatformRow[] }) {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  const total = rows.length;
+
+  const go = (next: number) => {
+    setActive(((next % total) + total) % total);
+    setAnimKey((k) => k + 1);
+  };
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => setInView(e.isIntersecting),
+      { threshold: 0.25 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (paused || !inView) return;
+    const id = setInterval(() => go(active + 1), 2500);
+    return () => clearInterval(id);
+  }, [active, paused, inView]);
+
+  const r = rows[active];
+
+  return (
+    <div
+      ref={sectionRef}
+      className="relative mt-8 lg:mt-12"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center overflow-hidden">
+        <div key={`img-${animKey}`} className="relative animate-[slide-in-left_0.45s_ease-out]">
+          <div className="absolute -inset-4 bg-gradient-primary opacity-10 rounded-3xl blur-2xl" aria-hidden />
+          <div className="relative rounded-2xl bg-navy p-2 lg:p-3 shadow-elegant ring-1 ring-navy/20">
+            <div className="flex items-center gap-1.5 px-2 pb-2">
+              <span className="h-2 w-2 lg:h-2.5 lg:w-2.5 rounded-full bg-primary/80" />
+              <span className="h-2 w-2 lg:h-2.5 lg:w-2.5 rounded-full bg-primary-foreground/30" />
+              <span className="h-2 w-2 lg:h-2.5 lg:w-2.5 rounded-full bg-primary-foreground/30" />
+            </div>
+            <img
+              src={r.img}
+              alt={r.title}
+              loading="lazy"
+              className="w-full h-auto rounded-lg bg-background border border-border aspect-[16/10] object-cover object-left-top"
+            />
+          </div>
+        </div>
+        <div key={`txt-${animKey}`} className="animate-[slide-in-right_0.45s_ease-out]">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary">
+            <span className="h-px w-8 bg-primary" /> Feature 0{active + 1}
+          </div>
+          <h3 className="mt-3 text-xl lg:text-3xl font-bold text-navy">{r.title}</h3>
+          <p className="mt-3 text-sm lg:text-base text-muted-foreground max-w-lg">{r.desc}</p>
+          <div className="mt-6 flex items-center gap-3">
+            <button
+              type="button"
+              aria-label="Previous feature"
+              onClick={() => go(active - 1)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-navy hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next feature"
+              onClick={() => go(active + 1)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-navy hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+            <div className="ml-2 flex items-center gap-1.5">
+              {rows.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Go to feature ${i + 1}`}
+                  onClick={() => go(i)}
+                  className={`h-1.5 rounded-full transition-all ${i === active ? "w-6 bg-primary" : "w-1.5 bg-border hover:bg-primary/50"}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Platform() {
   const rows = [
     { img: IMG.dash1, title: "Know when your salary funds are credited", desc: "Track transferred funds and view available balance in real-time. No more guessing or follow-up calls to the bank." },
@@ -399,53 +499,8 @@ export function Platform() {
             A single dashboard to run WPS salary transfers, manage payroll cards and approve every transaction — desktop or mobile.
           </p>
         </div>
-        <div className="mt-8 lg:hidden -mx-5 px-5 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar">
-          {rows.map((r, i) => (
-            <article key={r.title} className="w-[82vw] max-w-[315px] shrink-0 snap-start rounded-2xl border border-border bg-card p-4 shadow-card">
-              <div className="rounded-xl bg-navy p-2 shadow-card">
-                <div className="flex items-center gap-1.5 px-1 pb-1.5">
-                  <span className="h-2 w-2 rounded-full bg-primary/80" />
-                  <span className="h-2 w-2 rounded-full bg-primary-foreground/30" />
-                  <span className="h-2 w-2 rounded-full bg-primary-foreground/30" />
-                </div>
-                <img src={r.img} alt={r.title} loading="lazy" className="aspect-[16/10] w-full rounded-lg bg-background object-cover object-left-top" />
-              </div>
-              <div className="mt-4 text-[11px] font-bold uppercase tracking-wider text-primary">Feature 0{i + 1}</div>
-              <h3 className="mt-1.5 text-lg font-bold text-navy leading-snug">{r.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
-            </article>
-          ))}
-        </div>
-        <div className="mt-14 hidden lg:block space-y-24">
-          {rows.map((r, i) => (
-            <div key={r.title} className={`grid lg:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""}`}>
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-primary opacity-10 rounded-3xl blur-2xl" aria-hidden />
-                {/* Navy browser-style frame so the white dashboard screenshot is clearly visible */}
-                <div className="relative rounded-2xl bg-navy p-3 shadow-elegant ring-1 ring-navy/20">
-                  <div className="flex items-center gap-1.5 px-2 pb-2">
-                    <span className="h-2.5 w-2.5 rounded-full bg-primary/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-primary-foreground/30" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-primary-foreground/30" />
-                  </div>
-                  <img
-                    src={r.img}
-                    alt={r.title}
-                    loading="lazy"
-                    className="w-full h-auto rounded-lg bg-background border border-border"
-                  />
-                </div>
-              </div>
-              <div>
-                <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary">
-                  <span className="h-px w-8 bg-primary" /> Feature 0{i + 1}
-                </div>
-                <h3 className="mt-3 text-2xl lg:text-3xl font-bold text-navy">{r.title}</h3>
-                <p className="mt-3 text-base text-muted-foreground max-w-lg">{r.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <PlatformCarousel rows={rows} />
+
       </div>
     </section>
   );
