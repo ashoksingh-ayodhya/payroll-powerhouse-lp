@@ -660,7 +660,8 @@ export function FAQ() {
       <div className="mx-auto max-w-4xl px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">FAQ</p>
-          <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">WPS payroll & salary card questions, answered</h2>
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">Edenred Payroll & C3Pay — your questions, answered</h2>
+          <span className="sr-only">WPS payroll, salary card and payroll card FAQs for UAE businesses.</span>
         </div>
         <div className="mt-8 lg:mt-12 space-y-3">
           {faqs.map((f) => (
