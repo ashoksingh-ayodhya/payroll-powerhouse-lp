@@ -757,6 +757,17 @@ function Select({ label, name, options, required }: { label: string; name: strin
   );
 }
 
+export function Footer() {
+  const year = new Date().getFullYear();
+  return (
+    <footer className="border-t border-border bg-background">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8 py-5 text-center text-xs text-muted-foreground">
+        © {year} Edenred Prepaid Cards Management Services LLC. All rights reserved.
+      </div>
+    </footer>
+  );
+}
+
 
 export const seoMeta = () => ({
   meta: [
