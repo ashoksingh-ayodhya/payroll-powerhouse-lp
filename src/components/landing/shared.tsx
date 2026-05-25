@@ -199,14 +199,10 @@ export function HeroWithForm() {
 
 function InlineDemoForm() {
   return (
-    <div id="demo" className="rounded-3xl bg-background text-foreground p-2 shadow-elegant border border-border scroll-mt-24 overflow-hidden">
-      <iframe
-        src="https://edenred.ae/uae-payroll-lp#demo"
-        title="Book a free demo"
-        loading="lazy"
-        className="w-full rounded-2xl border-0"
-        style={{ height: 720 }}
-      />
+    <div id="demo" className="rounded-3xl bg-background text-foreground p-5 lg:p-6 shadow-elegant border border-border scroll-mt-24">
+      <h3 className="text-lg font-bold text-navy mb-1">Book your free demo</h3>
+      <p className="text-sm text-muted-foreground mb-4">A specialist will reach out within one business day.</p>
+      <SalesforceForm />
     </div>
   );
 }
