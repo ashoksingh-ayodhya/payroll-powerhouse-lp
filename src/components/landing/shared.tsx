@@ -486,8 +486,8 @@ export function WPS() {
           backgroundSize: "48px 48px",
         }}
       />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
-        <div className="lg:col-span-5 flex flex-col gap-6">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12 lg:items-stretch">
+        <div className="lg:col-span-5 flex flex-col">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">WPS & Compliance</p>
             <h2 className="mt-3 text-3xl lg:text-5xl font-bold">Stay 100% WPS compliant — without the spreadsheets</h2>
@@ -496,43 +496,50 @@ export function WPS() {
             </p>
           </div>
 
-          {/* Abstract bento — fills the left column to match the right grid height */}
-          <div className="mt-2 grid grid-cols-6 gap-4 flex-1 min-h-[320px]">
-            {/* Big stat tile */}
-            <div className="col-span-6 sm:col-span-4 rounded-2xl bg-primary text-primary-foreground p-6 flex flex-col justify-between relative overflow-hidden">
+          {/* Bento — fills remaining height to match right grid */}
+          <div className="mt-8 grid grid-cols-2 gap-4 flex-1 auto-rows-fr">
+            {/* Stat tile 1 */}
+            <div className="rounded-2xl bg-primary text-primary-foreground p-6 flex flex-col justify-between relative overflow-hidden min-h-[180px]">
               <div aria-hidden className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10" />
               <div aria-hidden className="absolute -right-2 bottom-4 h-16 w-16 rounded-2xl bg-white/10 rotate-12" />
               <p className="text-xs font-semibold uppercase tracking-widest text-white/80">Trusted by</p>
               <div>
                 <p className="text-4xl lg:text-5xl font-bold leading-none">15,000+</p>
-                <p className="mt-2 text-sm text-white/85">UAE businesses paying salaries on Edenred</p>
+                <p className="mt-2 text-sm text-white/85">UAE businesses on Edenred</p>
               </div>
             </div>
 
-            {/* Small accent tile */}
-            <div className="col-span-3 sm:col-span-2 rounded-2xl bg-white/5 border border-white/10 p-4 flex flex-col justify-between backdrop-blur">
-              <BadgeCheck className="h-6 w-6 text-primary" />
+            {/* Stat tile 2 — equal height */}
+            <div className="rounded-2xl bg-white/[0.06] border border-white/10 p-6 flex flex-col justify-between backdrop-blur relative overflow-hidden min-h-[180px]">
+              <div aria-hidden className="absolute -left-6 -bottom-6 h-24 w-24 rounded-full bg-primary/20 blur-2xl" />
+              <BadgeCheck className="h-7 w-7 text-primary" />
               <div>
-                <p className="text-2xl font-bold">100%</p>
-                <p className="text-xs text-primary-foreground/70 mt-1">WPS compliant</p>
+                <p className="text-4xl lg:text-5xl font-bold leading-none">100%</p>
+                <p className="mt-2 text-sm text-primary-foreground/75">WPS compliant & MoHRE authorised</p>
               </div>
             </div>
 
-            {/* Partner logos tile — spans full width */}
-            <div className="col-span-6 rounded-2xl bg-white/5 border border-white/10 p-5 backdrop-blur">
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/60 mb-3">Regulated & powered by</p>
-              <div className="flex flex-wrap items-center gap-3">
-                <img src={IMG.rakbank} alt="Partnered with RAKBANK" className="h-8 w-auto bg-white rounded-md px-3 py-2" />
-                <img src={IMG.mastercardJaywan} alt="Powered by Mastercard & Jaywan" className="h-10 w-auto bg-white rounded-md px-3 py-1" />
-                <img src={IMG.mohre} alt="Authorised by MoHRE" className="h-12 w-auto bg-white rounded-md px-2 py-1" />
+            {/* Partner logos tile — full width, fills remaining */}
+            <div className="col-span-2 rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur flex-1 flex flex-col justify-between gap-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/60">Regulated & powered by</p>
+              <div className="grid grid-cols-3 gap-3 items-center">
+                <div className="bg-white rounded-lg h-12 flex items-center justify-center px-3">
+                  <img src={IMG.rakbank} alt="Partnered with RAKBANK" className="max-h-7 w-auto object-contain" />
+                </div>
+                <div className="bg-white rounded-lg h-12 flex items-center justify-center px-3">
+                  <img src={IMG.mastercardJaywan} alt="Powered by Mastercard & Jaywan" className="max-h-9 w-auto object-contain" />
+                </div>
+                <div className="bg-white rounded-lg h-12 flex items-center justify-center px-2">
+                  <img src={IMG.mohre} alt="Authorised by MoHRE" className="max-h-10 w-auto object-contain" />
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+        <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5 auto-rows-fr">
           {points.map((p) => (
-            <div key={p.title} className="rounded-2xl bg-white/5 border border-white/10 p-5 backdrop-blur hover:bg-white/[0.07] transition-colors">
+            <div key={p.title} className="rounded-2xl bg-white/5 border border-white/10 p-5 backdrop-blur hover:bg-white/[0.07] transition-colors flex flex-col">
               <div className="h-10 w-10 rounded-lg bg-primary/15 text-primary flex items-center justify-center">
                 <p.icon className="h-5 w-5" />
               </div>
