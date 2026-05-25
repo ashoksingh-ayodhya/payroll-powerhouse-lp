@@ -33,6 +33,9 @@ function LandingPage() {
         <FAQ />
         <DemoForm />
       </main>
+      <div className="border-t border-border py-5 text-center text-xs text-muted-foreground px-4">
+        © {new Date().getFullYear()} Edenred Prepaid Cards Management Services LLC. All rights reserved.
+      </div>
     </div>
   );
 }
