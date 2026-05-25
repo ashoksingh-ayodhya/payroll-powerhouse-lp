@@ -838,8 +838,8 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">
-        <p>Edenred Prepaid Cards Management Services LLC</p>
-        <p className="mt-1">© {new Date().getFullYear()} Edenred UAE. All rights reserved.</p>
+        <p className="font-medium text-foreground">Edenred Prepaid Cards Management Services LLC</p>
+        <p className="mt-1">© {new Date().getFullYear()} Edenred Prepaid Cards Management Services LLC. All rights reserved.</p>
       </div>
     </footer>
   );
