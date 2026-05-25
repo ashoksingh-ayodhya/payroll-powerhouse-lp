@@ -300,20 +300,46 @@ export function ClientLogos() {
 
 export function Stats() {
   const stats = [
-    { k: "15,000+", v: "UAE businesses on Edenred Payroll" },
-    { k: "#1", v: "Largest salary processor in the UAE" },
-    { k: "100%", v: "WPS compliant & MoHRE authorised" },
-    { k: "24/7", v: "Multilingual employee support" },
+    { icon: Building2, k: "15,000+", v: "UAE businesses trust Edenred Payroll" },
+    { icon: BadgeCheck, k: "#1", v: "Largest salary processor in the UAE" },
+    { icon: ShieldCheck, k: "100%", v: "WPS compliant & MoHRE authorised" },
+    { icon: Clock, k: "24/7", v: "Multilingual employee support" },
   ];
   return (
-    <section className="py-14 bg-navy text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8">
-        {stats.map((s) => (
-          <div key={s.v} className="text-center lg:text-left">
-            <div className="text-4xl lg:text-5xl font-bold text-primary-foreground">{s.k}</div>
-            <div className="mt-2 text-sm text-primary-foreground/70 max-w-[14rem] lg:mx-0 mx-auto">{s.v}</div>
-          </div>
-        ))}
+    <section className="relative overflow-hidden bg-navy text-primary-foreground py-12 lg:py-20">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-60"
+        style={{
+          background:
+            "radial-gradient(60% 80% at 85% 15%, oklch(0.605 0.232 27.5 / 0.35), transparent 60%), radial-gradient(40% 60% at 10% 90%, oklch(0.605 0.232 27.5 / 0.18), transparent 60%)",
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="max-w-2xl">
+          <p className="text-xs lg:text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">By the numbers</p>
+          <h2 className="mt-2 text-2xl lg:text-4xl font-bold leading-tight">The UAE's most trusted payroll partner</h2>
+        </div>
+        <div className="mt-8 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden bg-white/10 border border-white/10">
+          {stats.map((s) => (
+            <div
+              key={s.v}
+              className="bg-navy p-5 lg:p-7 flex flex-col gap-3 lg:gap-4 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="h-9 w-9 lg:h-11 lg:w-11 rounded-lg bg-primary/15 text-primary-foreground flex items-center justify-center ring-1 ring-primary/30">
+                <s.icon className="h-4 w-4 lg:h-5 lg:w-5" />
+              </div>
+              <div>
+                <div className="text-3xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                  {s.k}
+                </div>
+                <div className="mt-1.5 lg:mt-2 text-xs lg:text-sm text-primary-foreground/70 leading-snug">
+                  {s.v}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -329,7 +355,7 @@ export function Features() {
     { icon: LayoutDashboard, title: "Payroll Designed for You", desc: "Issue salary cards, schedule WPS payroll runs and track transfer status in real-time from a single dashboard." },
   ];
   return (
-    <section id="features" className="py-20 lg:py-28">
+    <section id="features" className="py-12 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Why finance & HR teams choose us</p>
@@ -364,7 +390,7 @@ export function Platform() {
     { img: IMG.better4, title: "Payroll history at your fingertips", desc: "Automated, audit-ready payroll reports — search any month, any employee, any salary transfer instantly." },
   ];
   return (
-    <section id="platform" className="py-20 lg:py-28 bg-soft">
+    <section id="platform" className="py-12 lg:py-28 bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">The platform</p>
@@ -415,7 +441,7 @@ export function Cards() {
     { icon: ShieldCheck, title: "Live delivery tracking", desc: "Cards delivered directly to you with full live tracking so nothing falls through the cracks." },
   ];
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-12 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {/* Left column — flex so button sits at the bottom */}
@@ -479,7 +505,7 @@ export function WPS() {
     { icon: Users, title: "Employee financial wellness", desc: "Salary advance, instant remittance, mobile recharge to 130+ countries via C3Pay." },
   ];
   return (
-    <section id="wps" className="relative overflow-hidden py-20 lg:py-28 bg-navy text-primary-foreground">
+    <section id="wps" className="relative overflow-hidden py-12 lg:py-28 bg-navy text-primary-foreground">
       {/* Abstract decorative grid pattern */}
       <div
         aria-hidden
@@ -567,7 +593,7 @@ export function EmployeeValue() {
     { icon: LifeBuoy, title: "24/7 support", desc: "Multilingual support for every employee in their preferred language." },
   ];
   return (
-    <section className="py-20 lg:py-28 bg-soft">
+    <section className="py-12 lg:py-28 bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Section header */}
         <div className="max-w-3xl">
@@ -640,7 +666,7 @@ export function FAQ() {
     { q: "How much does Edenred Payroll cost?", a: "Pricing is transparent and tailored to your headcount and payroll volume. You receive a single, clear invoice with no hidden fees. Book a demo and our team will share pricing for your business." },
   ];
   return (
-    <section id="faq" className="py-20 lg:py-28 bg-soft">
+    <section id="faq" className="py-12 lg:py-28 bg-soft">
       <div className="mx-auto max-w-4xl px-5 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">FAQ</p>
@@ -665,7 +691,7 @@ export function FAQ() {
 export function DemoForm() {
   const [submitted, setSubmitted] = useState(false);
   return (
-    <section id="demo" className="py-20 lg:py-28 bg-navy-deep text-primary-foreground relative overflow-hidden scroll-mt-24">
+    <section id="demo" className="py-12 lg:py-28 bg-navy-deep text-primary-foreground relative overflow-hidden scroll-mt-24">
       <div
         className="absolute inset-0 opacity-30"
         style={{
