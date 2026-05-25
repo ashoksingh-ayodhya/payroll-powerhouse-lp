@@ -218,32 +218,48 @@ export function ClientLogos() {
     { src: IMG.daytoday, alt: "Day to Day" },
     { src: IMG.client7, alt: "Trusted client" },
   ];
+  const stats = [
+    { k: "15,000+", v: "UAE businesses" },
+    { k: "#1", v: "Salary processor" },
+    { k: "100%", v: "WPS compliant" },
+    { k: "24/7", v: "Employee support" },
+  ];
   return (
-    <section id="clients" className="py-8 lg:py-12 border-y border-border bg-soft">
+    <section id="clients" className="py-10 lg:py-14 border-y border-border bg-soft">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        {/* Desktop: tight inline lockup. Mobile: stacked compact label. */}
-        <div className="hidden lg:flex items-center gap-8">
-          <p className="shrink-0 max-w-[180px] text-xs font-semibold uppercase tracking-widest text-muted-foreground leading-snug border-r border-border pr-8">
-            15,000+ UAE companies trust Edenred
+        {/* Stats row */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+          {stats.map((s, i) => (
+            <div
+              key={s.k}
+              className={`flex flex-col items-center text-center ${i < stats.length - 1 ? "lg:border-r" : ""} border-border`}
+            >
+              <span className="text-2xl lg:text-3xl font-bold text-primary tracking-tight">{s.k}</span>
+              <span className="mt-1 text-xs lg:text-sm text-muted-foreground">{s.v}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Divider + Logos */}
+        <div className="mt-8 pt-6 border-t border-border">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+            Trusted by leading UAE companies
           </p>
-          <div className="flex-1 flex items-center justify-between gap-6">
+
+          {/* Desktop logos */}
+          <div className="mt-5 hidden lg:flex items-center justify-between gap-6">
             {logos.map((l) => (
               <img
                 key={l.alt}
                 src={l.src}
                 alt={`${l.alt} – Edenred Payroll client`}
-                className="h-8 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition"
+                className="h-7 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition"
               />
             ))}
           </div>
-        </div>
 
-        {/* Mobile: compact auto-scrolling marquee */}
-        <div className="lg:hidden">
-          <p className="text-center text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-            Trusted by 15,000+ UAE companies
-          </p>
-          <div className="mt-4 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          {/* Mobile marquee */}
+          <div className="lg:hidden mt-4 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
             <div className="flex items-center gap-10 animate-[marquee_22s_linear_infinite] w-max">
               {[...logos, ...logos].map((l, i) => (
                 <img
@@ -262,61 +278,7 @@ export function ClientLogos() {
 }
 
 export function Stats() {
-  const stats = [
-    { k: "15,000+", v: "UAE businesses trust Edenred Payroll to deliver for their teams." },
-    { k: "#1", v: "Largest salary processor in the UAE, powering the workforce." },
-    { k: "100%", v: "WPS compliant & MoHRE authorised for absolute peace of mind." },
-    { k: "24/7", v: "Multilingual employee support, available whenever they need it." },
-  ];
-  return (
-    <section className="py-10 lg:py-20 px-4 lg:px-6">
-      <div className="mx-auto max-w-7xl">
-        <div className="relative overflow-hidden rounded-3xl bg-navy shadow-2xl shadow-navy/20">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute top-0 right-0 w-1/2 h-full"
-            style={{ background: "linear-gradient(to bottom right, oklch(0.605 0.232 27.5 / 0.10), transparent)" }}
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-24 -left-24 w-64 h-64 rounded-full blur-3xl"
-            style={{ background: "oklch(0.605 0.232 27.5 / 0.08)" }}
-          />
-
-          <div className="relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-12 p-8 md:p-14 lg:p-20 items-center">
-            <div className="lg:col-span-5 space-y-4">
-              <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase">
-                By the numbers
-              </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight">
-                The UAE's most <span className="text-primary">trusted</span> payroll partner
-              </h2>
-              <div className="w-12 h-1 bg-primary mt-6" />
-            </div>
-
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
-                {stats.map((s) => (
-                  <div
-                    key={s.k}
-                    className="group bg-white/5 border border-white/10 backdrop-blur-sm p-6 lg:p-8 rounded-2xl hover:border-primary/50 transition-all duration-300"
-                  >
-                    <div className="flex flex-col space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <span className="w-1.5 h-6 bg-primary rounded-full group-hover:h-8 transition-all duration-300" />
-                        <span className="text-3xl lg:text-4xl font-bold text-primary-foreground tracking-tight">{s.k}</span>
-                      </div>
-                      <p className="text-primary-foreground/70 text-sm leading-relaxed">{s.v}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return null;
 }
 
 export function Features() {
