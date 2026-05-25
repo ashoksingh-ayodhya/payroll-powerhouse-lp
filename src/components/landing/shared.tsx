@@ -458,23 +458,23 @@ export function Cards() {
     { icon: ShieldCheck, title: "Live delivery tracking", desc: "Cards delivered directly to you with full live tracking so nothing falls through the cracks." },
   ];
   return (
-    <section className="py-12 lg:py-28">
+    <section className="py-10 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left column — flex so button sits at the bottom */}
           <div className="flex flex-col">
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">Salary card management</p>
-              <h2 className="mt-3 text-3xl lg:text-5xl font-bold text-navy">
+              <h2 className="mt-3 text-2xl lg:text-5xl font-bold text-navy">
                 Order, replace and cancel <span className="text-primary">payroll cards</span> effortlessly
               </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-lg">
+              <p className="mt-3 lg:mt-4 text-base lg:text-lg text-muted-foreground max-w-lg">
                 Every employee gets a Mastercard-powered C3Pay salary card — accepted at any ATM, online and in-store worldwide. You stay fully in control of issuance.
               </p>
             </div>
             {/* Card image fills remaining space */}
-            <div className="flex-1 flex items-center justify-center my-6">
-              <div className="relative max-w-[220px] lg:max-w-[260px] w-full">
+            <div className="flex-1 flex items-center justify-center my-5 lg:my-6">
+              <div className="relative max-w-[170px] lg:max-w-[260px] w-full">
                 <div className="absolute -inset-4 bg-gradient-primary opacity-10 blur-2xl rounded-3xl" aria-hidden />
                 <img
                   src={IMG.cards1}
@@ -493,15 +493,15 @@ export function Cards() {
             </a>
           </div>
           {/* Right column — 3 evenly-sized cards matching left height */}
-          <div className="grid gap-5 grid-rows-3 h-full">
+          <div className="grid gap-4 lg:gap-5 grid-rows-3 h-full">
             {items.map((it) => (
-              <div key={it.title} className="flex items-center gap-5 rounded-2xl border border-border bg-card p-6 shadow-card hover:shadow-elegant transition-shadow h-full">
-                <div className="h-14 w-14 shrink-0 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center">
-                  <it.icon className="h-7 w-7" />
+              <div key={it.title} className="flex items-center gap-4 lg:gap-5 rounded-2xl border border-border bg-card p-4 lg:p-6 shadow-card hover:shadow-elegant transition-shadow h-full">
+                <div className="h-11 w-11 lg:h-14 lg:w-14 shrink-0 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center">
+                  <it.icon className="h-5 w-5 lg:h-7 lg:w-7" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-navy text-lg">{it.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{it.desc}</p>
+                  <h3 className="font-semibold text-navy text-base lg:text-lg">{it.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-1 lg:mt-1.5 leading-relaxed">{it.desc}</p>
                 </div>
               </div>
             ))}
@@ -522,7 +522,7 @@ export function WPS() {
     { icon: Users, title: "Employee financial wellness", desc: "Salary advance, instant remittance, mobile recharge to 130+ countries via C3Pay." },
   ];
   return (
-    <section id="wps" className="relative overflow-hidden py-12 lg:py-28 bg-navy text-primary-foreground">
+    <section id="wps" className="relative overflow-hidden py-10 lg:py-28 bg-navy text-primary-foreground">
       {/* Abstract decorative grid pattern */}
       <div
         aria-hidden
@@ -533,41 +533,41 @@ export function WPS() {
           backgroundSize: "48px 48px",
         }}
       />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12 lg:items-stretch">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-12 gap-8 lg:gap-12 lg:items-stretch">
         <div className="lg:col-span-5 flex flex-col">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">WPS & Compliance</p>
-            <h2 className="mt-3 text-3xl lg:text-5xl font-bold">Stay 100% WPS compliant — without the spreadsheets</h2>
-            <p className="mt-4 text-lg text-primary-foreground/80 max-w-lg">
+            <h2 className="mt-3 text-2xl lg:text-5xl font-bold">Stay 100% WPS compliant — without the spreadsheets</h2>
+            <p className="mt-3 lg:mt-4 text-base lg:text-lg text-primary-foreground/80 max-w-lg">
               Edenred Payroll handles WPS file generation, salary transfers and reconciliation, so your finance team can stop chasing files and start closing books faster.
             </p>
           </div>
 
           {/* Bento — fills remaining height to match right grid */}
-          <div className="mt-8 grid grid-cols-2 gap-4 flex-1 auto-rows-fr">
+          <div className="mt-6 lg:mt-8 grid grid-cols-2 gap-3 lg:gap-4 flex-1 auto-rows-fr">
             {/* Stat tile 1 */}
-            <div className="rounded-2xl bg-primary text-primary-foreground p-6 flex flex-col justify-between relative overflow-hidden min-h-[180px]">
+            <div className="rounded-2xl bg-primary text-primary-foreground p-4 lg:p-6 flex flex-col justify-between relative overflow-hidden min-h-[128px] lg:min-h-[180px]">
               <div aria-hidden className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10" />
               <div aria-hidden className="absolute -right-2 bottom-4 h-16 w-16 rounded-2xl bg-white/10 rotate-12" />
               <p className="text-xs font-semibold uppercase tracking-widest text-white/80">Trusted by</p>
               <div>
-                <p className="text-4xl lg:text-5xl font-bold leading-none">15,000+</p>
-                <p className="mt-2 text-sm text-white/85">UAE businesses on Edenred</p>
+                <p className="text-3xl lg:text-5xl font-bold leading-none">15,000+</p>
+                <p className="mt-1.5 lg:mt-2 text-xs lg:text-sm text-white/85">UAE businesses on Edenred</p>
               </div>
             </div>
 
             {/* Stat tile 2 — equal height */}
-            <div className="rounded-2xl bg-white/[0.06] border border-white/10 p-6 flex flex-col justify-between backdrop-blur relative overflow-hidden min-h-[180px]">
+            <div className="rounded-2xl bg-white/[0.06] border border-white/10 p-4 lg:p-6 flex flex-col justify-between backdrop-blur relative overflow-hidden min-h-[128px] lg:min-h-[180px]">
               <div aria-hidden className="absolute -left-6 -bottom-6 h-24 w-24 rounded-full bg-primary/20 blur-2xl" />
               <BadgeCheck className="h-7 w-7 text-primary" />
               <div>
-                <p className="text-4xl lg:text-5xl font-bold leading-none">100%</p>
-                <p className="mt-2 text-sm text-primary-foreground/75">WPS compliant & MoHRE authorised</p>
+                <p className="text-3xl lg:text-5xl font-bold leading-none">100%</p>
+                <p className="mt-1.5 lg:mt-2 text-xs lg:text-sm text-primary-foreground/75">WPS compliant & MoHRE authorised</p>
               </div>
             </div>
 
             {/* Partner logos tile — full width, fills remaining */}
-            <div className="col-span-2 rounded-2xl bg-white/[0.06] border border-white/10 p-5 backdrop-blur flex-1 flex flex-col justify-between gap-4">
+            <div className="col-span-2 rounded-2xl bg-white/[0.06] border border-white/10 p-4 lg:p-5 backdrop-blur flex-1 flex flex-col justify-between gap-3 lg:gap-4">
               <p className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/60">Regulated & powered by</p>
               <div className="grid grid-cols-3 gap-3 items-center">
                 <div className="bg-white rounded-lg h-12 flex items-center justify-center px-3">
@@ -584,14 +584,14 @@ export function WPS() {
           </div>
         </div>
 
-        <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5 auto-rows-fr">
+        <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-2 gap-3 lg:gap-5 auto-rows-fr">
           {points.map((p) => (
-            <div key={p.title} className="rounded-2xl bg-white/5 border border-white/10 p-5 backdrop-blur hover:bg-white/[0.07] transition-colors flex flex-col">
-              <div className="h-10 w-10 rounded-lg bg-primary/15 text-primary flex items-center justify-center">
-                <p.icon className="h-5 w-5" />
+            <div key={p.title} className="rounded-2xl bg-white/5 border border-white/10 p-3.5 lg:p-5 backdrop-blur hover:bg-white/[0.07] transition-colors flex flex-col">
+              <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-lg bg-primary/15 text-primary flex items-center justify-center">
+                <p.icon className="h-4 w-4 lg:h-5 lg:w-5" />
               </div>
-              <h3 className="mt-4 font-semibold text-primary-foreground">{p.title}</h3>
-              <p className="mt-1.5 text-sm text-primary-foreground/70">{p.desc}</p>
+              <h3 className="mt-3 lg:mt-4 text-sm lg:text-base font-semibold text-primary-foreground leading-snug">{p.title}</h3>
+              <p className="mt-1.5 text-xs lg:text-sm text-primary-foreground/70 leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
