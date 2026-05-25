@@ -125,15 +125,32 @@ export function SalesforceForm({ variant = "light" }: { variant?: "light" | "car
       </div>
 
       <div className="sm:col-span-2 mt-2">
+        <label className="flex items-start gap-2 text-[12px] text-muted-foreground cursor-pointer select-none">
+          <input
+            type="checkbox"
+            name="marketing_consent"
+            defaultChecked
+            className="mt-0.5 h-4 w-4 rounded border-border text-primary focus:ring-primary/40 cursor-pointer shrink-0"
+          />
+          <span>
+            I agree to be contacted by Edenred about payroll & salary card solutions. See our{" "}
+            <a
+              href="https://edenred.ae/privacy-policy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline hover:opacity-80"
+            >
+              Privacy Policy
+            </a>
+            . You can uncheck this box to opt out.
+          </span>
+        </label>
         <button
           type="submit"
-          className="w-full h-12 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition"
+          className="mt-3 w-full h-12 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition"
         >
           Book my free demo
         </button>
-        <p className="mt-2 text-[11px] text-muted-foreground">
-          By submitting, you agree to be contacted by Edenred about payroll & salary card solutions.
-        </p>
       </div>
     </form>
   );
