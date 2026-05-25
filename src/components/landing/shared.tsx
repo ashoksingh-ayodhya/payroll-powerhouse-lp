@@ -21,6 +21,7 @@ import {
   LifeBuoy,
   Wallet,
 } from "lucide-react";
+import { SalesforceForm } from "./SalesforceForm";
 
 // Assets hosted on edenred.ae (per user requirement: only use site images).
 // Proxied via images.weserv.nl because edenred.ae blocks hot-linking from
