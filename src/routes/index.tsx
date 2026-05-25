@@ -25,7 +25,6 @@ function LandingPage() {
       <main>
         <HeroClassic />
         <ClientLogos />
-        <Stats />
         <Features />
         <Platform />
         <Cards />
