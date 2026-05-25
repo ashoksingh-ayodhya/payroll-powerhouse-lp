@@ -726,7 +726,6 @@ export function FAQ() {
 }
 
 export function DemoForm() {
-  const [submitted, setSubmitted] = useState(false);
   return (
     <section id="demo" className="py-10 lg:py-16 bg-navy-deep text-primary-foreground relative overflow-hidden scroll-mt-24">
       <div
@@ -760,47 +759,14 @@ export function DemoForm() {
             </div>
           </div>
         </div>
-        <div className="rounded-3xl bg-background text-foreground p-5 lg:p-9 shadow-elegant">
-          {submitted ? (
-            <div className="py-10 text-center">
-              <div className="mx-auto h-14 w-14 rounded-full bg-accent grid place-items-center text-primary">
-                <CheckCircle2 className="h-7 w-7" />
-              </div>
-              <h3 className="mt-4 text-2xl font-bold text-navy">Thank you!</h3>
-              <p className="mt-2 text-muted-foreground">
-                Our sales team will reach out within one business day to schedule your Edenred Payroll demo.
-              </p>
-            </div>
-          ) : (
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
-              className="space-y-3.5 lg:space-y-4"
-            >
-              <h3 className="text-xl font-bold text-navy">Book a free demo</h3>
-              <p className="text-sm text-muted-foreground -mt-2">No commitment. Response within one business day.</p>
-              <div className="grid sm:grid-cols-2 gap-3 lg:gap-4">
-                <Field label="Your Full Name" name="Your Full Name" required />
-                <Field label="Your Work Email" name="Your Work Email" type="email" required />
-                <Field label="Mobile Phone Number" name="Mobile Phone Number" type="tel" required />
-                <Field label="Your Company Name" name="Your Company Name" required />
-                <Select label="Select number of employees" name="Select number of employees" options={["1 - 99 employees", "100 - 250 employees", "250 - 999 employees", "1000+ employees"]} required />
-                <Select label="Emirate" name="Emirate" options={["Dubai", "Sharjah", "Abu Dhabi", "Ras Al Khaimah", "Ajman", "Umm Al Quwain", "Fujairah"]} required />
-              </div>
-              <label className="flex items-start gap-2.5 text-xs text-muted-foreground leading-relaxed">
-                <input type="checkbox" name="Consent to marketing communications" required className="mt-0.5 h-4 w-4 rounded border-input accent-primary" />
-                <span>I/we consent to the usage of my/our personal data to send marketing communications tailored to my/our interests.</span>
-              </label>
-              <button
-                type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-6 py-3.5 text-sm font-semibold shadow-card hover:opacity-95"
-              >
-                Book a demo <ArrowRight className="h-4 w-4" />
-              </button>
-            </form>
-          )}
+        <div className="rounded-3xl bg-background text-foreground p-2 shadow-elegant overflow-hidden">
+          <iframe
+            src="https://edenred.ae/uae-payroll-lp#demo"
+            title="Book a free demo"
+            loading="lazy"
+            className="w-full rounded-2xl border-0"
+            style={{ height: 720 }}
+          />
         </div>
       </div>
     </section>
