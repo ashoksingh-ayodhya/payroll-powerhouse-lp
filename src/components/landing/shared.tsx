@@ -693,9 +693,10 @@ export function DemoForm() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <div>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">Book a free demo</p>
-          <h2 className="mt-3 text-2xl lg:text-5xl font-bold">See WPS payroll & salary cards in action</h2>
+          <h2 className="mt-3 text-2xl lg:text-5xl font-bold">See Edenred Payroll & C3Pay in action</h2>
+          <span className="sr-only">Live demo of WPS payroll, salary card and payroll card solution.</span>
           <p className="mt-3 lg:mt-4 text-base lg:text-lg text-primary-foreground/80 max-w-lg">
-            Tell us about your team and we'll walk you through Edenred Payroll, pricing, and salary card issuance for your business.
+            Tell us about your team and we'll walk you through Edenred Payroll, pricing, and C3Pay salary card issuance for your business.
           </p>
           <ul className="mt-5 lg:mt-8 space-y-2.5 lg:space-y-3 text-sm">
             {["Live demo of the payroll dashboard", "Tailored pricing for your headcount", "Onboarding & WPS migration walkthrough"].map((t) => (
