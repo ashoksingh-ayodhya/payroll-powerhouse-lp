@@ -15,6 +15,10 @@ import {
   Globe2,
   Clock,
   BadgeCheck,
+  Send,
+  Phone,
+  LifeBuoy,
+  Wallet,
 } from "lucide-react";
 
 // Assets hosted on edenred.ae (per user requirement: only use site images).
