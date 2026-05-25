@@ -70,6 +70,9 @@ export function SalesforceForm({ variant = "light" }: { variant?: "light" | "car
     >
       <input type="hidden" name="oid" value={OID} />
       <input type="hidden" name="retURL" value={RET_URL} />
+      {/* Lead Owner: Naresh Surendran */}
+      <input type="hidden" name="owner" value="005Jv000007Z4uNIAS" />
+      <input type="hidden" name="lead_owner" value="005Jv000007Z4uNIAS" />
       {/* Lead Channel hardcoded */}
       <input type="hidden" id={F.leadChannel} name={F.leadChannel} value="Website SEM" />
       {/* GCLID + UTM (auto from URL) */}
