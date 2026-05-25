@@ -173,6 +173,8 @@
   .bg-navy { background-color: var(--navy); }
   .bg-navy-deep { background-color: var(--navy-deep); }
   .bg-soft { background-color: var(--soft); }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
 }
 
 @keyframes marquee {
