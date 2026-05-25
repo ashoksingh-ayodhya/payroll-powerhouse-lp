@@ -107,7 +107,7 @@ export function HeroClassic() {
             Simplify <span className="text-primary">payroll</span> for your UAE workforce
           </h1>
           <p className="mt-4 lg:mt-5 text-base lg:text-lg text-muted-foreground max-w-xl">
-            Run accurate, on-time payroll, issue Mastercard salary cards to every employee, and stay 100% WPS compliant — all from one secure dashboard. Trusted by 15,000+ companies across the UAE.
+            The UAE's first WPS Agent. Run WPS-compliant payroll, issue Mastercard salary cards and manage payroll cards for every employee — all from one secure dashboard. Trusted by 15,000+ businesses paying 2.2 million+ people.
           </p>
           <ul className="mt-5 lg:mt-6 grid sm:grid-cols-2 gap-2.5 lg:gap-3 max-w-xl">
             {[
