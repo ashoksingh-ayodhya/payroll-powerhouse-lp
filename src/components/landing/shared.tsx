@@ -104,10 +104,10 @@ export function HeroClassic() {
             UAE's largest WPS-compliant payroll provider
           </div>
           <h1 className="mt-4 lg:mt-5 text-3xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.08] lg:leading-[1.05]">
-            Simplify <span className="text-primary">payroll</span> for your UAE workforce
+            WPS Payroll & <span className="text-primary">Salary Cards</span> built for UAE businesses
           </h1>
           <p className="mt-4 lg:mt-5 text-base lg:text-lg text-muted-foreground max-w-xl">
-            The UAE's first WPS Agent. Run WPS-compliant payroll, issue Mastercard salary cards and manage payroll cards for every employee — all from one secure dashboard. Trusted by 15,000+ businesses paying 2.2 million+ people.
+            Run accurate, on-time payroll, issue Mastercard salary cards to every employee, and stay 100% WPS compliant — all from one secure dashboard. Trusted by 15,000+ companies across the UAE.
           </p>
           <ul className="mt-5 lg:mt-6 grid sm:grid-cols-2 gap-2.5 lg:gap-3 max-w-xl">
             {[
@@ -162,10 +162,10 @@ export function HeroWithForm() {
             UAE's largest WPS-compliant payroll provider
           </div>
           <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-[1.05]">
-            Simplify <span className="text-primary">payroll</span> for your UAE workforce
+            WPS Payroll & <span className="text-primary">Salary Cards</span> built for UAE businesses
           </h1>
           <p className="mt-5 text-lg text-muted-foreground max-w-xl">
-            The UAE's first WPS Agent. Run WPS-compliant payroll, issue Mastercard salary cards and manage payroll cards for every employee — all from one secure dashboard. Trusted by 15,000+ businesses paying 2.2 million+ people.
+            Run accurate, on-time payroll, issue Mastercard salary cards to every employee, and stay 100% WPS compliant — all from one secure dashboard. Trusted by 15,000+ companies across the UAE.
           </p>
           <ul className="mt-6 grid sm:grid-cols-2 gap-3 max-w-xl">
             {[
