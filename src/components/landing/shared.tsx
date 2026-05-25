@@ -300,20 +300,46 @@ export function ClientLogos() {
 
 export function Stats() {
   const stats = [
-    { k: "15,000+", v: "UAE businesses on Edenred Payroll" },
-    { k: "#1", v: "Largest salary processor in the UAE" },
-    { k: "100%", v: "WPS compliant & MoHRE authorised" },
-    { k: "24/7", v: "Multilingual employee support" },
+    { icon: Building2, k: "15,000+", v: "UAE businesses trust Edenred Payroll" },
+    { icon: BadgeCheck, k: "#1", v: "Largest salary processor in the UAE" },
+    { icon: ShieldCheck, k: "100%", v: "WPS compliant & MoHRE authorised" },
+    { icon: Clock, k: "24/7", v: "Multilingual employee support" },
   ];
   return (
-    <section className="py-14 bg-navy text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8">
-        {stats.map((s) => (
-          <div key={s.v} className="text-center lg:text-left">
-            <div className="text-4xl lg:text-5xl font-bold text-primary-foreground">{s.k}</div>
-            <div className="mt-2 text-sm text-primary-foreground/70 max-w-[14rem] lg:mx-0 mx-auto">{s.v}</div>
-          </div>
-        ))}
+    <section className="relative overflow-hidden bg-navy text-primary-foreground py-12 lg:py-20">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-60"
+        style={{
+          background:
+            "radial-gradient(60% 80% at 85% 15%, oklch(0.605 0.232 27.5 / 0.35), transparent 60%), radial-gradient(40% 60% at 10% 90%, oklch(0.605 0.232 27.5 / 0.18), transparent 60%)",
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="max-w-2xl">
+          <p className="text-xs lg:text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">By the numbers</p>
+          <h2 className="mt-2 text-2xl lg:text-4xl font-bold leading-tight">The UAE's most trusted payroll partner</h2>
+        </div>
+        <div className="mt-8 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden bg-white/10 border border-white/10">
+          {stats.map((s) => (
+            <div
+              key={s.v}
+              className="bg-navy p-5 lg:p-7 flex flex-col gap-3 lg:gap-4 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="h-9 w-9 lg:h-11 lg:w-11 rounded-lg bg-primary/15 text-primary-foreground flex items-center justify-center ring-1 ring-primary/30">
+                <s.icon className="h-4 w-4 lg:h-5 lg:w-5" />
+              </div>
+              <div>
+                <div className="text-3xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                  {s.k}
+                </div>
+                <div className="mt-1.5 lg:mt-2 text-xs lg:text-sm text-primary-foreground/70 leading-snug">
+                  {s.v}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
