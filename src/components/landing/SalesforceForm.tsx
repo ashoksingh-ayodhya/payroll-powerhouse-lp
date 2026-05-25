@@ -93,17 +93,17 @@ export function SalesforceForm({ variant = "light" }: { variant?: "light" | "car
         <label htmlFor="last_name" className={labelCls}>Last Name *</label>
         <input id="last_name" name="last_name" type="text" maxLength={80} required className={inputCls} />
       </div>
-      <div>
+      <div className="sm:col-span-2">
         <label htmlFor="email" className={labelCls}>Work Email *</label>
         <input id="email" name="email" type="email" maxLength={80} required className={inputCls} />
       </div>
       <div>
-        <label htmlFor="mobile" className={labelCls}>Mobile *</label>
-        <input id="mobile" name="mobile" type="tel" maxLength={40} required className={inputCls} />
-      </div>
-      <div className="sm:col-span-2">
         <label htmlFor="company" className={labelCls}>Company *</label>
         <input id="company" name="company" type="text" maxLength={40} required className={inputCls} />
+      </div>
+      <div>
+        <label htmlFor="mobile" className={labelCls}>Mobile *</label>
+        <input id="mobile" name="mobile" type="tel" maxLength={40} required className={inputCls} />
       </div>
       <div>
         <label htmlFor={F.employeeRange} className={labelCls}>Number of employees *</label>
